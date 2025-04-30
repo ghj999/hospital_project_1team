@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'Interop';
+	src:
+		url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+		format('woff2'),
+		url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+		format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+body {
+	font-family: 'Interop', Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #F3F3F3;
+	display: flex;
+	flex-direction: column; /* 세로 방향으로 정렬 */
+	height: 100vh; /* 뷰포트 높이로 설정 */
+}
+
+/* 헤더 */
+.admin-header {
+	background-color: #3086C9;
+	color: white;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center; /* 세로 방향 정렬 */
+}
+
+.admin-header .logo {
+	display: flex;
+	align-items: center; /* 내부 요소(로고와 텍스트)를 세로 중앙 정렬 */
+}
+
+/* 오른쪽 전체 nav 묶음 */
+.nav-container {
+	display: flex;
+	align-items: center; /* nav들을 세로 중앙 정렬 */
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
+	background-color: #23507B; /* 카드 배경 */
+	padding: 10px 15px;
+	border-radius: 3px;
+	border: none;
+}
+
+.nav img {
+	width: 40px; /* 이미지 크기 */
+	object-fit: cover;
+	margin-right: 10px;
+	border-radius: 50%;
+	border: 1px solid white;
+}
+
+.nav p {
+	margin: 0;
+	line-height: 1.4;
+	font-size: 14px;
+}
+
+.nav:last-child {
+	padding: 21px 15px;
+	margin-right: 0;
+	cursor: pointer;
+}
+
+.nav:last-child:hover {
+	background-color: #12B8BA;
+}
+
+/* 사이드바 */
+.admin-sidebar {
+	width: 200px;
+	height: calc(100vh - 82px); /* 헤더 높이를 뺀 전체 높이 */
+	background-color: #12B8BA;
+	padding: 20px;
+	position: fixed;
+	top: 82px;
+	bottom: 0;
+	overflow-y: auto;
+}
+
+.admin-sidebar ul {
+	list-style: none;
+	padding: 0;
+}
+
+.admin-sidebar ul p {
+	font-size: 24px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	color: white;
+}
+
+.admin-sidebar ul li {
+	color: white;
+	font-size: 18px;
+	padding: 10px;
+	width: 100%;
+	cursor: pointer;
+}
+
+.admin-sidebar ul li:hover {
+	background-color: #F3F3F3;
+	color: #12B8BA;
+}
+
+.admin-content-container {
+	display: flex;
+	justify-content: center; /* 가로 중앙 정렬 */
+	align-items: center; /* 세로 중앙 정렬 */
+	flex: 1;
+	margin-left: 250px; /* 사이드바 공간 확보 */
+	background-color: #F3F3F3;
+}
+
+.admin-content {
+    width: 90%;
+    max-height: 800px;
+    background-color: white;
+    border: 1px solid #d8d8d8;
+    border-top: 2px solid #3086C9;
+    display: flex; /* 내부 요소를 flex로 정렬 */
+    flex-direction: column; /* 세로 정렬 */
+    overflow: hidden; /* 내부 내용이 넘치지 않도록 설정 */
+}
+
+.admin-content>p {
+	text-align: center;
+}
+
+.scroll_container {
+    flex: 1; /* 부모(.admin-content)의 남은 공간을 차지하도록 설정 */
+    padding-right: 15px;
+    overflow-y: auto; /* 세로 스크롤 활성화 */
+    overflow-x: hidden; /* 가로 스크롤 제거 */
+    margin: 5px;
+}
+
+.scroll_container::-webkit-scrollbar {
+	width: 10px; /* 스크롤바 너비 */
+}
+
+.scroll_container::-webkit-scrollbar-track {
+	background: none; /* 스크롤바 트랙 배경 */
+}
+
+.scroll_container::-webkit-scrollbar-thumb {
+	background-color: #3086C9; /* 스크롤바 색상 */
+	border-radius: 10px; /* 스크롤바 둥글게 */
+	border: 2px solid #f3f3f3; /* 스크롤바 경계 */
+	
+}
+
+
+
+
+
+
+
+

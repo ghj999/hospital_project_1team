@@ -1,0 +1,231 @@
+@charset "UTF-8";
+
+@font-face {
+      font-family: 'Interop';
+      src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+          format('woff2'),
+          url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+          format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+}
+      
+*{margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;}
+
+/* 큰 틀 */
+#container {
+	width: 1000px;
+	margin: 20px auto;
+}
+
+#container>p {
+	font-size: 40px;
+	font-weight: 500;
+}	
+
+
+
+/* 검색, 층별 안내, 지도 배치 */
+#content_wrap{
+	width: 1000px;
+	display:flex;
+	align-items: center; /* 수직 중앙 정렬 */
+	justify-content: center; /* 수평 중앙 정렬 */
+	gap: 60px;
+}	
+
+/* 검색, 층별 테이블 묶음 */
+#floor_div {
+	width: 260px;
+}
+
+/* ------------------------------- 검색 ---------------------------- */
+/* 검색 돋보기 사진 */
+#search img {
+	width: 35px;
+	height: 35px;
+	margin: 0 auto;
+}
+
+/* 검색 text */
+#search_text {
+	width: 230px;
+	height: 45px;
+	font-size: 16px;
+	padding-left:5px;
+	border: 1px solid #c0c0c0;
+	outline:none;
+	transition: boreder-color 0.3s ease-in-out;
+}
+#search_text:hover{
+	border-color: #12B8BA;
+}
+
+/* ------------------------------- 검색 결과 테이블 ---------------------------- */
+/* 테이블 길어질 때 스크롤 */
+#search_result_div{
+	width:258px;
+	max-height: 150px; 
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-left: 2px;
+    margin-top: 10px;
+}
+#search_result_div::-webkit-scrollbar {
+	width: 5px;
+}
+
+#search_result_div::-webkit-scrollbar-track {
+	background-color: #f8f8f8;
+}
+
+#search_result_div::-webkit-scrollbar-thumb {
+	background-color: #12B8BA;
+}
+
+#search_result_div::-webkit-scrollbar-button {
+	display: none;
+}
+
+
+/* 검색 결과 테이블 */
+#search_result {
+    border: 1px solid #ddd;
+    border-collapse:collapse;
+    text-align: center;
+    width: 100%;
+    display:none;
+    margin-right: 2px;
+}
+
+#search_result th, #search_result td {
+	padding: 8px;
+	border-bottom: 1px solid #ddd;
+}
+
+#search_result th {
+	background-color: #f2f2f2;
+}
+
+#search_result td:nth-child(1) {
+    width: 220px; 
+}
+
+#search_result td:nth-child(2) {
+    width: 40px; 
+}
+
+#search_result td{
+	color: #4d4d4d;
+	font-size: 16px;
+}
+
+
+.search_loc {
+}
+
+.search_floor {
+}
+
+
+/* ---------------------------- 층수 테이블( 1F ~ 9F ) ----------------------- */
+/* 층 클릭 시 해당 층 보여주기 */
+#floor_table_div {
+	display: flex;
+	gap: 20px;
+	align-items: flex-start;
+}
+
+
+#floor_table {
+	border-collapse: collapse;
+	margin-right: 5px;
+}
+
+#floor_table th {
+	width: 45px;
+	height: 35px;
+	font-weight: 500;
+	padding: 6px;
+	cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#floor_table th.selected {
+	background-color: #12B8BA;
+    border-radius: 50%;
+    color:white;
+   
+}
+
+
+
+/* ---------------------------- 층수( 1F ~ 9F ) 클릭 시 층 정보 ----------------------- */
+#floor_names_div {
+	width: 260px;
+	height: 420px;
+	overflow-y: scroll;
+	padding:0 !important;
+}
+#floor_names_div::-webkit-scrollbar {
+	margin-top: 16px;
+	width: 5px;
+}
+
+#floor_names_div::-webkit-scrollbar-track {
+	background-color: #f8f8f8;
+}
+
+#floor_names_div::-webkit-scrollbar-thumb {
+	background-color: #12B8BA;
+}
+
+#floor_names_div::-webkit-scrollbar-button {
+	display: none;
+}
+
+#floor_names_div li {
+	list-style: none;
+	line-height: 180%;
+	color: #4d4d4d;
+	padding:3px;
+	font-size: 16px;
+}
+
+#floor_names_div li:first-child{
+	padding-top:0;
+}
+
+.floor_name {
+	display: none;
+}
+
+.floor_name.active {
+	display: block;
+}
+
+	  
+
+/* --------------------------------------------------------------- */
+/* 세로선 */
+#line {
+	border-left: 1px solid lightgray;
+	height:600px;
+}
+
+
+
+/* ------------------------------ 층별 사진 -------------------------- */
+/* 지도 사진 */
+#map_img_div{}
+
+#map_img_div img {
+	width: 600px;
+	height: 500px;
+	display: none;
+}
+
+
+
+

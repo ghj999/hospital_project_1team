@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+@font-face {
+      font-family: 'Interop';
+      src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+          format('woff2'),
+          url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+          format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+}
+      
+body {margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;}
+
+/* 큰 틀 */
+#container {
+	width: 1000px;
+	margin: 20px auto;
+}
+
+#container>p {
+	font-size: 40px;
+	margin-bottom: 50px;
+	font-weight: 500;
+}
+					   
+/* 검색 */			   
+/* select, 검색어, 검색 버튼 묶음 */
+#search_div { text-align: right; }
+	 		
+/* select */
+#search {
+	height: 40px;
+	border: 1px solid #c0c0c0;
+	text-align: center;
+	transition: border-color 0.3s ease-in-out;
+}
+#search:focus{
+	border-color: #12B8BA; 
+}
+
+/* 검색어 입력 */
+#search_text {
+	height: 37px;
+	width: 200px;
+	border: 1px solid #c0c0c0;
+	outline: none;
+	transition: border-color 0.3s ease-in-out;
+}
+#search_text:focus{
+	border-color: #12B8BA;
+}
+
+/* 검색 버튼 */
+#search_btn {
+	height: 40px;
+	width: 60px;
+	background: #12B8BA;
+	border:1px solid #0f8c8c; 
+	color:white;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+#search_btn:hover{
+	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}
+
+
+
+/* 공지사항 */
+#notice_div img {
+	width: 20px;
+	height: 20px;
+}
+
+#notice_div table {
+	border-collapse: collapse;
+	width: 1000px;
+	text-align: center;
+}
+
+#notice_div table tr{
+	border-top: 1px solid #8b8b8b;
+}
+
+#notice_div table th {
+	border-top: 2px solid #8b8b8b;
+}
+
+#notice_div table tr:last-child {
+	border-bottom: 2px solid #8b8b8b;
+}
+
+#container table tr th, td {
+	padding: 18px;
+}
+
+
+
+/* 제목 a태그 */
+#notice_div a {
+	text-decoration: none;
+	color: black;
+}
+
+/* 제목 td*/
+.title_td {
+	padding: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width:450px;
+}
+
+.date_td, .hit_td{
+	font-size: 16px;
+}
+
+
+
+/* 페이지 */
+#page { 
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 80px;
+}

@@ -1,0 +1,263 @@
+@charset "UTF-8";
+
+@font-face {
+      font-family: 'Interop';
+      src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+          format('woff2'),
+          url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+          format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+}
+      
+body {margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;}
+
+/* 큰 틀 */
+#container {
+	width: 1000px;
+	margin: 20px auto;
+}
+
+#container>p {
+	font-size: 40px;
+	margin-bottom: 50px;
+	font-weight: 500;
+}
+
+/* --------------------- 상단 내용 ----------------------------- */
+/* 상단 정보 선 */
+.line1{
+	height:2px;
+	background:gray;
+}
+.line2{
+	background:gray;
+}
+
+
+/* 상단 정보 */
+#title{
+	text-align: center;
+	margin: 30px 60px;
+}
+#title p{
+	font-size:30px;
+}
+
+#period{
+	text-align: center;
+	margin: 20px;
+	
+}
+#period p{
+	font-size:19px;
+}
+
+#hit_and_regdate{
+	text-align: center;
+	margin: 20px;
+}
+#hit_and_regdate p{
+	font-size:16px;
+	color:#5a5a5a;
+}
+
+#contents pre{
+	font-size:17px;
+	white-space: pre-wrap;
+	word-break: break-all;
+	overflow: auto;
+	margin: 30px;
+	/* 폰트 */
+	margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;
+	color:#1a1a1a;
+	}
+
+/* 파일첨부 div */
+#file{
+	width: 1000px;
+	height: 50px;
+	background: #eeeeee;
+	
+}
+#file p{
+	display:inline-block;	
+	margin: 16px 25px;
+}
+
+#file a{
+	color: #474747;
+	font-size:17px;
+}
+
+.line3{
+	margin-top: 100px;
+}
+
+.line4{
+	margin-top: 5px;
+}
+
+.line3, .line4{
+	border:none;
+	background: #12B8BA;
+	height: 2px;
+}
+
+
+
+/* -------------------------- 댓글입력 -------------------------- */
+
+/* 프로필, 이름 div */
+.comment_header {
+    height: 40px;
+}
+
+/* 프로필 사진 */
+.comment_header img{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	vertical-align: top;
+}
+
+/* 이름 */
+.comment_header p{
+	display: inline-block;
+	margin-left: 10px;
+	padding-top: 10px;
+	height:40px;
+	line-height:normal;
+}
+
+/* 입력, 버튼 div */
+.comment_body {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end; /* 하단 정렬 */
+}
+
+/* 댓글 입력란 */
+#comment_input_div textarea{
+	/* 폰트 */
+	margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;
+	
+	width: 900px;
+	height: 60px;
+	resize:none;
+	outline:none;
+	border: 1px solid #d3d3d3;
+	margin-left: 10px;
+	font-size:16px;
+	padding:10px;
+	transition: border-color 0.3s ease-in-out;
+}
+#comment_input_div textarea:focus {
+    border-color: #12B8BA;
+}
+
+/* 등록 버튼 */
+.comm_insert_btn{
+	width:50px;
+	height:30px;
+	background: #12B8BA;
+	font-size: 15px;
+	border: 1px solid #0f8c8c;
+	border-radius:2px;
+	color: white;
+	cursor: pointer;
+	margin-right: 15px;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+.comm_insert_btn:hover{
+	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}
+
+	
+	
+	
+/* --------------------------- 댓글 조회 ------------------------------ */
+/* 댓글조회 div */
+.comment_list{
+	position: relative;
+	height: 150px;
+}
+.comment_list img{
+	width: 40px;
+	height: 40px;
+	margin: 0px;
+}
+.comment_list p{
+	position: absolute;
+	left: 60px;
+	top: 15px;
+}
+.comment_list pre{
+	margin: 5px;
+}
+
+
+
+/* --------------------------- 페이지 처리 -------------------------------- */
+/* 이전글, 다음글 */
+#pre_next_div table {
+	border-collapse: collapse;
+	width: 1000px;
+	height: 100px;
+}
+
+#pre_next_div table tr {
+	border-top: 1px solid #d3d3d3;
+	border-bottom: 1px solid #d3d3d3;
+}
+
+#pre_next_div table td{
+	padding-left: 20px;
+}
+						 
+#pre_next_div table a {
+	text-decoration: none;
+	color: gray;
+	font-weight: 200;
+}
+
+.pre_td, .next_td{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width:450px;
+}
+
+
+
+/* 목록으로 버튼 */
+#back_btn {
+	background: #12B8BA;
+	border: 1px solid #109a9a;
+	color: white;
+	height: 40px;
+	width: 70px;
+	font-size: 15px;
+	margin: 50px auto;
+	cursor: pointer;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+#back_btn:hover {
+	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}
+
+#list_btn_div{
+	text-align: right;
+	
+}
+
+/* 페이지 */
+#page {
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 50px;
+	
+}

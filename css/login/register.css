@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+<style>
+@font-face {
+  font-family: 'Interop';
+  src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+      format('woff2'),
+      url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+*{margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 15px;}
+
+#main_div{
+	width: 1000px;
+	margin: 20px auto;
+}
+
+/* 회원가입 단계 */
+#register_step{
+	width: 1000px;
+	height: 100px;
+	margin: 30px auto;
+	border-collapse: collapse; 
+	border: 1px solid #D2D2DE;
+	color: #D2D2DE;
+}
+#register_step tr td{
+	padding-left: 30px;
+	font-size: 24px;	
+}
+#register_step a{
+	font-size: 24px;	
+	font-weight: 600;	
+}
+#register_step #step2{
+	background-color: #3086C9;
+	color: white;
+}
+#register_step #step2 a{
+	color: #4eaaf2;
+}
+
+/* a태그 - "회원가입" =========================================================================== */
+#register_text{
+	display: block;
+	font-size: 40px;
+}
+
+/* 회원가입 div */
+#register_div{
+	text-align: center;
+}
+
+
+/* hr태그 */
+#register_div hr{
+	width: 980px; /* 좌우로 여백 10px */
+	background-color: #12B8BA;
+	margin: 20px auto;
+}	
+/* 필수입력란 표시 */
+.essential{
+	font-size: 10px;
+	color: red;
+}
+
+#register_div table{
+	text-align: left;
+	margin: 0px auto;
+	margin-bottom: 10px; 
+}
+#register_div table th{
+	width: 130px;
+	font-size: 18px; 
+}
+#register_div table input{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#register_div table th, td{
+	padding: 10px 0px;
+}
+
+/* input[type="text"] 태그 - 모든 태그 기본설정 */
+#register_div input{
+	border: 1px solid #E2E2E2;
+	width: 250px;
+	height: 35px;
+}
+#register_div input:focus{
+	border: 1px solid #12B8BA;
+}
+
+/* input[type="button"] 태그 - 중복확인 버튼, 주소찾기 버튼 */
+#register_div #id_btn, #register_div #address_btn{
+	border: none;
+	width: 130px;
+	height: 38px;
+	color: white;
+	background-color: #12B8BA;
+}
+
+/* input[type="text"] 태그 - 이메일 */
+#register_div .email{
+	width: 200px;	
+}
+/* option 태그 - 이메일주소 */
+#register_div #email_addr{
+	border: 1px solid #E2E2E2;
+	height: 40px;
+	width: 120px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* input[type="text"] 태그 - 주소 */
+#register_div #address_post{
+	width: 100px;
+}
+#register_div #address_detail, #register_div #address_road{
+	width: 400px;
+	margin-top: 10px;
+}
+
+/* option 태그 - 전화번호 */
+#register_div .pat_phone{
+	border: 1px solid #E2E2E2;
+	height: 40px;
+	width: 80px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* a태그 - "비밀번호가 일치하지 않습니다" */
+#register_div #pwd_text{
+	font-size: 15px;
+	color: #3086C9;
+}
+
+/* 가입취소, 회원가입 버튼 */
+#register_div #back_btn, #register_div #reg_btn{
+	border: none;
+	width: 150px;
+	height: 45px;
+}
+#register_div #back_btn {
+	border: 1px solid lightgray;
+	background-color: white;
+}
+#register_div #reg_btn {
+	background-color: #3086C9;
+	color: white;
+}
+
+/* radio - 성별 */
+#register_div input[type='radio'] {
+	width: 40px;
+	height: 20px;
+	accent-color: #3086C9;
+}

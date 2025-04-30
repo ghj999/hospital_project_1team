@@ -1,0 +1,264 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Interop';
+    src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2') format('woff2'),
+         url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+/* 기본 설정 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Interop', sans-serif;
+    font-weight: 300;
+}
+
+/* 댓글 전체 컨테이너 */
+#comment_list_div {
+    width: 100%;
+}
+
+/* 댓글 리스트 (스크롤 스타일 적용) */
+.comment_list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 250px; /* 고정 높이 설정 */
+    margin-bottom: 15px;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    overflow-x: hidden; /* 가로 스크롤 제거 */
+    overflow-y: auto;   /* 필요할 때만 세로 스크롤 표시 */
+    scrollbar-gutter: stable; /* 크기 변화 없이 스크롤 유지 */
+}
+
+/* 프로필, 이름, 시간 정렬 */
+.comment_result_header {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 이미지와 텍스트 간격 */
+}
+
+/* 프로필 이미지 */
+.comment_result_header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover; /* 이미지가 비율을 유지하며 영역을 꽉 채움 */
+}
+
+/* 닉네임 */
+.comm_name {
+	font-weight: bold;
+    font-size: 18px;
+}
+
+/* 작성 시간 */
+.comm_time {
+    font-size: 14px;
+    color: gray;
+}
+
+/* 댓글 내용과 버튼 정렬 */
+.comment_result_body {
+    display: flex;
+    justify-content: space-between; /* 내용과 버튼을 양쪽 정렬 */
+    align-items: center; /* 버튼이 항상 같은 높이에 정렬되도록 */
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* 댓글 내용 */
+.comm_content_div {
+    flex: 1; /* 버튼과 균형을 맞추기 위해 유연하게 확장 */
+    max-width: 700px; /* 내용이 너무 길어지는 걸 방지 */
+    padding: 10px;
+    font-size: 16px;
+    word-wrap: break-word;
+    min-width: 300px;
+    border-radius: 3px;
+}
+
+/* 줄바꿈 문제 해결 */
+.comm_content_div pre {
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin: 0;
+}
+
+/* 버튼 컨테이너 */
+.comm_btns {
+    display: flex;
+    gap: 10px; /* 버튼 간격 조정 */
+    flex-shrink: 0; /* 버튼 크기가 줄어들지 않도록 설정 */
+    align-items: center; /* 버튼이 항상 같은 높이에 정렬되도록 */
+    margin-left: 20px; /* 댓글 내용과 적절한 간격 유지 */
+}
+
+/* 버튼 스타일 */
+.comm_del_btn,
+.comm_reply_btn {
+    width: 100px;
+    height: 35px;
+    font-size: 14px;
+    background: white;
+    border: 1px solid #0f8c8c;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.comm_del_btn:hover,
+.comm_reply_btn:hover {
+    background: #f6f6f6;
+}
+
+/* 버튼 크기 */
+button {
+    font-size: 18px;
+    width: auto;
+    height: auto;
+}
+
+/* 답글 리스트 */
+.reply_list {
+    width: 100%;
+    margin-left: 40px; /* 댓글과 구분 */
+    padding-left: 10px;
+    border-left: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* 답글 간 간격 */
+}
+
+/* 답글 개별 항목 */
+.reply_item {
+    display: flex;
+    flex-direction: column;
+    position: relative; /* 삭제 버튼을 절대 위치로 배치할 기준 */
+    background: #f9f9f9;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #3086C9;
+    padding-right: 70px; /* 삭제 버튼과 내용 간 간격 확보 */
+}
+
+/* 답글 이름, 날짜 */
+.reply_name {
+    color: #3086C9;
+    font-size: 18px;
+}
+
+.reply_date {
+    font-size: 14px;
+    color: gray;
+    margin-left: 10px;
+}
+
+/* 답글 내용 */
+.reply_content pre {
+    background: white;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.4;
+    border: 1px solid #ddd;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* 답글 입력창 */
+.reply_form {
+    display: none; /* 기본적으로 숨김 */
+    flex-direction: column;
+    gap: 10px; /* 입력창과 버튼 간격 */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    z-index: 100;
+}
+
+/* 답글 입력 textarea */
+.reply_input {
+    min-height: 60px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    resize: none;
+}
+
+/* 등록 버튼 */
+.reply_submit_btn {
+    width: 100px;
+    height: 35px;
+    font-size: 14px;
+    color: white;
+    background-color: #3086C9;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+    align-self: flex-end; /* 오른쪽 정렬 */
+}
+
+.reply_submit_btn:hover{
+	background-color: #2770A7;
+}
+
+/* 답글 삭제 버튼 */
+.reply_item input[type="button"] {
+    position: absolute;
+    top: 70%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 30px;
+    font-size: 14px;
+    background: white;
+    color: #3086C9; /* 기본 글자색 */
+    border: 1px solid #3086C9;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* 부드러운 색상 변화 */
+}
+
+/* 답글 삭제 버튼 - 호버 시 */
+.reply_item input[type="button"]:hover {
+    background: #f9f9f9;
+}
+
+/* 스크롤바 스타일링 (Chrome, Edge, Safari) */
+.comment_list::-webkit-scrollbar {
+    width: 10px; /* 스크롤바 너비 */
+    border-radius: 10px;
+}
+
+/* 스크롤바 트랙 (배경 제거) */
+.comment_list::-webkit-scrollbar-track {
+    background: transparent !important;
+    border-radius: 10px;
+}
+
+/* 스크롤바 (둥글게 + 색상 변경) */
+.comment_list::-webkit-scrollbar-thumb {
+    background: #12B8BA; /* 스크롤바 색상 */
+    border-radius: 10px;
+}
+
+/* Firefox 스크롤바 스타일 (Firefox에서 적용 가능) */
+.comment_list {
+    scrollbar-width: thin;
+    scrollbar-color: #12B8BA transparent; /* 트랙 배경 투명 */
+}

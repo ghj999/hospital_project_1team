@@ -1,0 +1,209 @@
+@charset "UTF-8";
+
+@font-face {
+      font-family: 'Interop';
+      src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+          format('woff2'),
+          url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+          format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+}
+
+*{margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 17px;}
+
+/* 큰 틀 */
+#container {
+	width: 1000px;
+	margin: 20px auto;
+}
+	 		
+#container>p {
+	font-size: 40px;
+	margin-bottom: 50px;
+	font-weight: 500;
+}
+
+
+	 		
+/* 상단 지도 */
+#map1 {
+	width: 1000px;
+	height: 400px;
+}
+
+#map2 {
+	width: 1000px;
+}
+
+
+
+
+/* 주차장 규모 안내 */
+#parking_scale {
+	margin-top: 50px;
+}
+
+#parking_scale p {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+#parking_scale table {
+	border-collapse: collapse;
+	width: 1000px;
+	text-align: center;
+}
+
+#parking_scale table td{
+	padding: 5px;
+    color: #4d4d4d;
+    font-size: 16px;
+}
+
+#parking_scale table tr, td {
+	border-top: 1px solid #b0b0b0;
+    border-bottom: 1px solid #b0b0b0;
+}
+
+#parking_scale table tr:first-child {
+    border-top: 2px solid #b0b0b0;
+}
+
+#parking_scale table tr:last-child {
+    border-bottom: 2px solid #b0b0b0;
+}
+
+#parking_scale table th {
+	width: 300px;
+	height: 50px;
+	background: #fafafa;
+}
+
+
+
+
+
+/* 주차요금 안내 */
+#parking_pay {
+    margin-top: 50px;
+}
+
+#parking_pay p {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#parking_pay table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#parking_pay table th {
+    background: #fafafa;
+    width: 300px;
+    height: 50px;
+    border:1px solid #b0b0b0;
+}
+
+#parking_pay table td {
+    width: 700px;
+    text-align: center;
+    padding: 5px;
+    color: #4d4d4d;
+    font-size: 16px;
+    border:1px solid #b0b0b0;
+}
+
+/* 첫 번째 열 왼쪽 경계 제거 */
+#parking_pay table td:first-child,
+#parking_pay table th:first-child {
+    border-left: none;
+}
+
+/* 마지막 열 오른쪽 경계 제거 */
+#parking_pay table td:last-child,
+#parking_pay table th:last-child {
+    border-right: none;
+}
+
+/* 맨 위 tr */
+#parking_pay table tr:first-child th {
+    border-top: 2px solid #b0b0b0;
+}
+
+/* 맨 아래 tr */
+#parking_pay table tr:last-child td {
+    border-bottom: 2px solid #b0b0b0;
+}
+
+
+
+
+
+
+/* 무료주차 안내 */
+#free_parking {
+    margin-top: 50px;
+}
+
+#free_parking p {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#free_parking table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#free_parking table th {
+    background: #fafafa;
+    width: 300px;
+    height: 50px;
+    border:1px solid #b0b0b0;
+}
+
+#free_parking table td {
+    width: 700px;
+    text-align: center;
+    padding: 5px;
+    color: #4d4d4d;
+    font-size: 16px;
+    border:1px solid #b0b0b0;
+}
+
+#free_parking table td ul li{
+	list-style-type: none; 
+}
+	
+/* 첫 번째 열 왼쪽 경계 제거 */
+#free_parking table td:first-child,
+#free_parking table th:first-child {
+    border-left: none;
+}
+
+/* 마지막 열 오른쪽 경계 제거 */
+#free_parking table td:last-child,
+#free_parking table th:last-child {
+    border-right: none;
+}
+
+/* 맨 위 tr */
+#free_parking table tr:first-child th {
+    border-top: 2px solid #b0b0b0;
+}
+
+/* 맨 아래 tr */
+#free_parking table tr:last-child td {
+    border-bottom: 2px solid #b0b0b0;
+}
+
+
+
+/* 빨간 글씨 */
+h5 {
+	color: red;
+	font-size: 15px;
+}

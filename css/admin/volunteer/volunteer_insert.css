@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+/* 큰 틀 */
+#container {
+	width: 1000px;
+	height: 800px;
+	margin: 70px auto;
+	position: relative;
+}
+
+#container p {
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: 70px;
+	margin-bottom: 60px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 1000px;
+	height: 350px;
+	top: 120px;
+	margin-bottom: 20px;
+}
+
+th, td {
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+th {
+	width: 200px;
+	background-color: #f4f4f4;
+}
+
+/* 제목 */
+#vol_title {
+	width: 100%; /* 너비를 부모 요소 기준으로 설정 */
+	font-size: 24px;
+	text-align: center;
+	outline: none;
+	border: none;
+}
+
+/* 내용 */
+#vol_content {
+	border: none;
+    width: 100%; /* 부모 요소의 너비에 맞춤 */
+    min-height: 100px; /* 최소 높이 설정 */
+    resize: none; /* 사용자가 크기를 변경하지 못하도록 설정 */
+    font-size: 16px; /* 글씨 크기 */
+    padding: 10px; /* 내부 여백 */
+    box-sizing: border-box; /* 패딩 포함 너비 계산 */
+    overflow: hidden; /* 스크롤 숨김 */
+    outline: none;
+}
+
+.vol_dates{
+	cursor: pointer;
+	padding: 5px;
+	width: 130px;
+}
+
+/* 버튼 */
+#back_btn, #ins_btn {
+	background: white;
+	border: none;
+	color: #3086C9;
+	border: 1px solid #3086C9;
+	height: 50px;
+	width: 70px;
+	font-size: 15px;
+	margin: 20px auto;
+	cursor: pointer;
+	width: 150px;
+}
+
+

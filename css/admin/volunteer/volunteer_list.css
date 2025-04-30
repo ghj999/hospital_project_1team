@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+/* 큰 틀 */
+#container {
+	width: 1000px;
+	height: 800px;
+	margin: 70px auto;
+	position: relative;
+}
+
+#container p {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+/* ------------------------------- 검색 ---------------------------- */
+/* select, 검색어, 검색 버튼 묶음 */
+#search_div { text-align: right; }
+			  
+/* select */
+#search {
+	height: 40px;
+	border: 1px solid #c0c0c0;
+	text-align: center;
+	transition: border-color 0.3s ease-in-out;
+}
+#search:focus{
+	border-color: #12B8BA; 
+}
+
+/* 검색어 입력 */
+#search_text {
+	height: 37px;
+	width: 200px;
+	border: 1px solid #c0c0c0;
+	outline: none;
+	transition: border-color 0.3s ease-in-out;
+}
+#search_text:focus{
+	border-color: #12B8BA;
+}
+
+/* 검색 버튼 */
+#search_btn {
+	height: 40px;
+	width: 60px;
+	background: #12B8BA;
+	border:1px solid #0f8c8c; 
+	color:white;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+#search_btn:hover{
+	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}
+
+
+/* ------------------------------- 자원봉사 ---------------------------- */
+#volunteer_div img {
+	width: 20px;
+	height: 20px;
+}
+
+#volunteer_div table {
+	border-collapse: collapse;
+	width: 1000px;
+	text-align: center;
+}
+
+#volunteer_div table tr{
+	border-top: 1px solid #8b8b8b;
+}
+
+#volunteer_div table th {
+	border-top: 2px solid #8b8b8b;
+}
+
+#volunteer_div table tr:last-child {
+	border-bottom: 2px solid #8b8b8b;
+}
+
+#container table tr th, td {
+	padding: 18px;
+}
+
+/* 제목 a태그 */
+#volunteer_div table a {
+	text-decoration: none;
+	color: black;
+}
+
+#volunteer_div table a:hover{
+	color: #3086C9;
+}
+
+/* td */
+.title_td {
+	padding: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width:450px;
+}
+
+.date_td, .hit_td{
+	font-size: 16px;
+}
+
+/* 페이지 */
+#page { 
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 80px;
+}
+
+.alert_warning {
+	color: #856404;
+	background-color: #fff3cd;
+	border: 1px solid #ffeeba;
+	padding: 10px;
+	margin: 20px auto 0; /* 가운데 정렬 */
+	width: 1000px; /* 서치 컨테이너와 동일한 너비 */
+	text-align: center;
+	font-size: 18px;
+	margin-top: 100px;
+}
+
+.buttons {
+	background: #3086C9;
+	border: none;
+	color: white;
+	height: 50px;
+	width: 70px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.btn_delete{
+	cursor: pointer;
+	width: 70px;
+	padding: 5px;
+	border: 1px solid #3086C9;
+	background-color: white;
+	color: #3086C9;
+}
+

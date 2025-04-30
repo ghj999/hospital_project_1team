@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+@font-face {
+	  font-family: 'Interop';
+	  src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+	      format('woff2'),
+	      url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+	      format('woff');
+	  font-weight: normal;
+	  font-style: normal;
+	  font-display: block;
+}
+
+*{margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;}
+
+input[type="button"]{
+	cursor: pointer;	
+}
+
+#main_div{
+	width: 1000px;
+	min-height: 650px;
+	margin: 20px auto;
+}
+
+/* a태그 - "온라인 진료비 결제" */
+#payment_text{
+	display: block;
+	font-size: 40px;
+	margin-bottom: 30px;
+}
+
+/* 시작일, 종료일 */
+#date_div{	
+	position: relative;
+}
+#date_div input[type="date"]{
+	height: 20px;
+}
+
+#start_text{
+	position: absolute;
+}
+#end_text{
+	position: absolute;
+	left: 150px;
+}
+#start_day{
+	position: absolute;
+	top: 40px;
+	width: 140px;
+	padding: 5px 0px;
+}
+#end_day{
+	position: absolute;
+	left: 150px;			
+	top: 40px;
+	width: 140px;
+	padding: 5px 0px;
+}
+/* input[type="button"] - 조회버튼 */
+#date_btn{
+	position: absolute;
+	left: 300px;
+	top: 40px;
+	width: 50px;
+	padding: 6px 0px;
+	border: none;
+	color: white;
+	background-color: #D2D2D2;
+}
+/* 전체조회버튼 */
+#all_btn{
+	position: absolute;
+	left: 355px;
+	top: 40px;
+	width: 85px;
+	padding: 6px 0px;
+	border: none;
+	color: white;
+	background-color: #D2D2D2;
+}
+
+/* 진료일, 진료과, 진료비 테이블 */			
+#date_div table{
+	width: 1000px;
+	margin-top: 80px;
+	border-collapse: collapse;
+}
+/* th태그 */
+#date_div table th{
+	font-size: 18px;
+	font-weight: bold;
+	background-color: #12B8BA;
+	color: white;
+	padding: 10px;
+	border: 1px solid white;
+}
+
+/* td태그 */
+#date_div table td{
+	font-size: 17px;
+	height: 50px;
+	padding-left: 10px;
+	border-bottom: 1px solid #626262;
+}
+
+#date_div table input[type="checkbox"]{
+ 	margin: auto;
+	zoom: 1.3;
+}
+
+/* input[type="button"] - 결제진행버튼 */
+#payment_btn{
+	margin: 10px 0px;
+	width: 1000px;
+	height: 50px;		
+	background-color: #12B8BA;
+	border: none;
+	color: white;
+}
+#payment_btn:hover{
+	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}
+
+
+/* 예약내역 없을 때 */
+.no_reservation hr{
+	border: 0;
+	background-color: #12B8BA;
+	height: 2px;
+}
+
+.no_reservation a{
+	display: block;	
+	text-align: center;
+	font-size: 24px;
+	width: 800px;
+	padding: 100px 0;
+	margin: 0px auto;
+	margin-top: 80px;
+	border: 2px solid #C2C2C2;
+	border-radius: 25px;
+}
+
+.no_reservation input[type='button']{
+	display: block;
+	width: 150px;
+	padding: 10px 0;
+	margin: 20px auto;
+	background-color: #12B8BA;
+	border: none;
+	color: white;
+}
+.no_reservation input[type='button']:hover{
+	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}
+

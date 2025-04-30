@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+/* 대분류 스타일 */
+ul.dropdown {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.dropdown > li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #12B8BA; /* 대분류 배경색 */
+    color: white; /* 대분류 텍스트 색상 */
+    position: relative;
+    margin-bottom: 5px;
+    text-align: left; /* 텍스트 정렬 */
+    font-size: 24px; /* 대분류 글씨 크기 */
+    font-weight: 500;
+}
+
+ul.dropdown > li:hover {
+    background-color: #0ea7aa; /* 대분류 호버 시 약간 어두운 색상 */
+}
+
+/* 소분류 기본 스타일 */
+ul.subcategories {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* 기본 숨김 */
+    background-color: white; /* 소분류 배경색 */
+    border: 1px solid #ccc;
+    color: black; /* 소분류 텍스트 색상 */
+    overflow: hidden;
+    max-height: 0; /* 숨김 상태 */
+    transition: max-height 0.3s ease, opacity 0.3s ease; /* 애니메이션 */
+    opacity: 0; /* 투명도 설정 */
+}
+
+/* 소분류 표시 */
+ul.subcategories.visible {
+    display: block; /* 표시 */
+    max-height: 500px; /* 최대 높이 설정 */
+    opacity: 1; /* 보이도록 설정 */
+}
+
+ul.subcategories > li {
+    padding: 10px;
+    width: 300px;
+    border-top: 1px solid #eee;
+    cursor: pointer;
+    color: black; /* 텍스트 색상 */
+    background: white;
+    font-size: 18px;
+    font-weight: 400;
+    transition: box-shadow 0.7s, background 0.7s;
+    z-index: 1; /* 드롭다운 메뉴의 우선 순위 */
+    position: relative; /* 부모 기준 배치 */
+}
+
+ul.subcategories > li:hover {
+    color: white; /* 텍스트 색상 */
+    background-color: #3086C9; /* 소분류 기본 배경 */
+    box-shadow: inset 300px 0 0 0 #3086C9; /* 내부 박스 그림자 */
+}
+
+/* 대분류 공통 스타일 */
+.category {
+    width: 300px;
+    margin: auto;
+    border: 1px solid #ccc;
+}
+
+/* "이전" 버튼 */
+#medical_subject > .before {
+    border: none;
+    padding: 10px 30px;
+    background: #12B8BA; /* 메인 버튼 배경 */
+    margin-top: 5px;
+    width: 200px;
+    color: white;
+    font-size: 18px; /* 버튼 폰트 크기 */
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%); /* 버튼을 중앙에 정렬 */
+    transition: background 0.3s ease;
+    z-index: 0; /* 이전 버튼이 드롭다운 아래로 */
+    
+}
+
+#medical_subject > .before:hover {
+    background: #3086C9;
+    cursor: pointer; /* 호버 시 서브 색상 */
+}
+
+/* 전체 레이아웃 */
+#medical_subject {
+    margin: 50px 50px;
+    text-align: center;
+    border: 1px solid #D8D8D8;
+    width: 400px;
+    height: 700px;
+    overflow-y: auto; /* 세로 스크롤바 추가 */
+    overflow-x: hidden; /* 가로 스크롤바 제거 */
+    background-color: white;
+    position: relative;
+    border-top: 2px solid #23507B;
+	}	
+
+
+
+
+
+
+/* #right 영역 */
+#right {
+    /* 기본 숨김 처리 */
+display: none; 
+}

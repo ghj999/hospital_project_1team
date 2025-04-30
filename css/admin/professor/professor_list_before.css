@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+/* 큰 틀 */
+#container {
+	width: 1000px;
+	height: 800px;
+	margin: 70px auto;
+	position: relative;
+}
+
+#container p {
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: 70px;
+	margin-bottom: 60px;
+}
+
+#fix_content, .search_info, #search_result {
+	width: 100%;
+}
+
+.title {
+	font-size: 40px;
+	font-weight: bold;
+	color: #333;
+	margin: 0 auto 20px; /* 수평 가운데 정렬 */
+	cursor: pointer;
+	text-align: center;
+	color: black; /* 선택 사항 */
+}
+
+.search_container {
+	background: #fff;
+	padding: 20px;
+	border: 1px solid #ddd;
+	display: block; /* inline-block에서 block으로 변경 */
+	text-align: center;
+	margin: 0 auto 20px; /* 수평 가운데 정렬 (위: 0, 아래: 20px) */
+	width: 1000px; /* 너비를 더 넓게 설정 */
+}
+
+.search_container select {
+	padding: 12px; /* 높이 증가 */
+	margin-right: 10px;
+	font-size: 18px;
+	border: 1px solid #ddd;
+	border-radius: 1px;
+	width: 200px; /* 너비 조정 */
+}
+
+.search_container input {
+	padding: 12px;
+	margin-right: 10px;
+	font-size: 18px;
+	border: 1px solid #ddd;
+	width: 400px; /* 더 넓게 설정 */
+}
+
+.search_container button {
+	padding: 12px 30px;
+	font-size: 18px;
+	color: #fff;
+	background-color: #007BFF;
+	border: none;
+	cursor: pointer;
+}
+
+.search_info {
+	display: flex;
+	align-items: center; /* 이미지와 텍스트를 수직 가운데 정렬 */
+	justify-content: center; /* 전체 내용을 수평 가운데 정렬 */
+	gap: 20px; /* 이미지와 텍스트 사이 간격 */
+	margin: 30px auto; /* 수평 가운데 정렬 (위, 아래 마진 설정) */
+	padding: 20px; /* 내부 여백 추가 */
+	background-color: #f9f9f9; /* 선택 사항: 배경색 */
+	width: 1000px; /* search_container와 동일한 너비 */
+	max-width: 100%; /* 화면 크기 초과 방지 */
+	text-align: center; /* 텍스트 정렬 */
+}
+
+.search_info img {
+	width: 50px;
+	height: 50px;
+	flex-shrink: 0; /* 이미지는 크기가 줄어들지 않음 */
+}
+
+.search_info p {
+	margin: 0;
+	font-size: 18px;
+	line-height: 1.6;
+	color: #333;
+	text-align: left;
+	margin-left: 20px;
+}
+
+.search_info input[type="button"] {
+    display: block; /* 줄바꿈 */
+    margin-left: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #12B8BA;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

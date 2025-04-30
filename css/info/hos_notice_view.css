@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+@font-face {
+      font-family: 'Interop';
+      src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+          format('woff2'),
+          url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+          format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+}
+      
+*{margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;}
+
+/* 큰 틀 */
+#container {
+	width: 1000px;
+	margin: 20px auto;
+}
+
+#container>p {
+	font-size: 40px;
+	margin-bottom: 50px;
+	font-weight: 500;
+}
+
+
+
+/* --------------------- 상단 상세 내용 ----------------------------- */
+/* 상단 정보 선 */
+.line1{
+	height:2px;
+	background:gray;
+}
+.line2{
+	background:gray;
+}
+
+/* 제목 */	
+#title{
+	text-align: center;
+	margin: 30px 60px;
+}	   
+#title>p {
+	font-size: 30px;
+}
+
+/* 날짜 */
+#date{
+	text-align: right;		
+	margin: 10px;
+}
+#date > p { color:gray;
+			margin: 5px;  }		
+		   
+/* 내용 */
+#content pre{
+	font-size:17px;
+	white-space: pre-wrap;
+	word-break: break-all;
+	overflow: auto;
+	margin: 30px;}
+
+/* 이미지 */
+#img { text-align:center; }
+
+#img img {
+	width: 800px;
+}
+
+/* 이전글, 다음글 */
+#pre_next_div { margin:20px 0; }
+
+#pre_next_div table {
+	border-collapse: collapse;
+	width: 1000px;
+	height: 100px;
+}
+
+#pre_next_div table tr {
+	border-top: 1px solid #d3d3d3;
+	border-bottom: 1px solid #d3d3d3;
+}
+
+#pre_next_div table td{
+	padding-left: 20px;
+}
+
+#pre_next_div table a {
+	text-decoration: none;
+	color: gray;
+	font-weight: 200;
+}
+
+.pre_td, .next_td{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width:450px;
+}
+
+
+
+/* 목록으로 버튼 */
+#back_btn {
+	background: #12B8BA;
+	border: 1px solid #109a9a;
+	color: white;
+	height: 40px;
+	width: 70px;
+	font-size: 15px;
+	margin: 50px auto;
+	cursor: pointer;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+#back_btn:hover {
+	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}
+
+#btn_div{
+	text-align: right;
+}
+
+

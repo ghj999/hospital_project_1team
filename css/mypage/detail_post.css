@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Interop';
+  src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+      format('woff2'),
+      url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+*{margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;}
+
+#main_div{
+	width: 1000px;
+	margin: 20px auto;
+	margin-bottom: 300px;
+}
+#detail_text{
+	display: block;
+	font-size: 40px;
+	margin-bottom: 30px;
+}
+
+#mid_hr{
+	border: 1px solid #E2E2E2;
+}
+
+#title_hr,
+#sub_hr{
+	border: 1px solid #8b8b8b;
+}
+
+#main_div p{
+	margin: 10px;
+}
+
+#title{
+	font-size: 24px;
+}
+
+#contents{
+	min-height: 150px;
+}
+
+#btn{
+	text-align: center;
+	display: block;
+	margin-top: 30px;
+}
+#main_div input[type="button"]{
+	width: 150px;
+	height: 40px;
+	cursor: pointer;
+}
+#btn input[type="button"]{
+	background-color: white;
+	border: 1px solid #E2E2E2;
+	color: #8b8b8b;
+	cursor: pointer;
+}
+#btn input[type="button"]:first-child{
+	background-color: #12B8BA;
+	border: 1px solid #12B8BA;
+	color: white;
+}
+
+		

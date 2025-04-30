@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Interop';
+  src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+      format('woff2'),
+      url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+*{margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;}
+input[type="button"]{
+	cursor: pointer;	
+}
+
+#main_div{
+	width: 1000px;
+	margin: 20px auto;
+}
+
+#cert_text{
+	display: block;
+	margin-bottom: 30px;
+	font-size: 40px;
+	font-weight: 500;
+}
+
+/* 발급받을 증명서 목록 */
+#cert_select {
+    font-size: 18px;
+    margin: 0px auto;
+    padding: 10px;
+    width: 1000px;
+    /* background-color: #12B8BA; */
+    /* color: white; */
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#cert_select option {
+    font-size: 18px;
+    padding-top: 10px; /* padding 적용 */
+    padding-bottom: 10px; /* padding 적용 */
+}
+
+.title{
+	font-size: 24px;
+	margin: 15px 0px;
+}
+
+/* cert_info 태그들 */
+#main_div table{	
+	border-collapse: collapse;
+	width: 1000px;
+}
+#main_div table td{
+	padding: 10px;
+}
+#table_header th{
+	height: 40px;
+}
+
+/* 증명서 별로 달라지는 div구간 */
+.cert_section{
+	height: 500px;
+}
+
+#main_div hr{
+	width: 1000px;
+	margin: 10px 0px;
+}
+
+/* td - 환자정보 */
+.pat_info, .period{
+	font-size: 18px;
+}
+/* td - 기간선택 */
+.period{
+	width: 70px;	
+}
+
+/* input[type="date"] = 기간선택 */
+input[type="date"] {
+	padding-left: 10px;
+	height: 40px;
+	width: 180px;
+}
+
+/* 증명서 발급받기 버튼 */
+#main_div input[type="button"]{
+	display: block;
+	margin: 10px auto;
+	font-size: 18px;
+	width: 200px;
+	height: 40px;
+	background-color: #12B8BA;		
+	color: white;
+	border: none;	
+}
+	
+#main_div input[type='button']:hover{
+	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}	

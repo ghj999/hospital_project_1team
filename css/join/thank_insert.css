@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+@font-face {
+      font-family: 'Interop';
+      src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+          format('woff2'),
+          url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+          format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+}
+      
+*{margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;}
+
+
+
+/* 큰 틀 */
+#container {
+	width: 1000px;
+	margin: 20px auto;
+}
+
+#container>p {
+	font-size: 40px;
+	margin-bottom: 50px;
+	font-weight: 500;}
+
+	
+
+/* 테이블 */			   
+#container table {
+	border-collapse: collapse;
+	align: center;
+	width: 1000px;
+}
+
+#container table tr {
+	border-top: 1px solid gray;
+}
+
+#container table th {
+	width: 250px;
+	height: 50px;
+	color: #323232;
+}
+
+#container table tr:first-child {
+	border-top: 2px solid gray;
+}
+
+#container table .last_tr {
+	border-bottom: 2px solid gray;
+}
+
+#container table tr th, td {
+	padding: 10px;
+}
+
+
+
+/* 필수 표시 */
+table tr th a{
+	color:red;
+	font-size:14px;
+}
+
+/* 번호, 파일 아래 글씨 */				  
+#container table p {
+	color: #12B8BA;
+	font-size: 15px;
+	margin-top: 10px;
+}
+
+
+
+/* 전화번호, 이메일 select */
+select {
+	border: 1px solid #d3d3d3;
+	padding: 5px;
+	height: 42px !important;
+	transition: border-color 0.3s ease-in-out;
+}
+
+select:focus {
+    border-color: #12B8BA; 
+}
+
+.board_phone_s {
+	width: 90px;
+	height: 34px;
+}
+
+#email_addr {
+	width: 100px;
+	height: 34px;
+}
+
+option{
+	text-align: center;
+}
+
+
+
+/* 입력창 */
+input[type="text"], textarea {
+	border: 1px solid #d3d3d3;
+	outline: none;
+	padding: 5px;
+	transition: border-color 0.3s ease-in-out;
+}
+
+/* 입력창 클릭 시 */
+input[type="text"]:focus, textarea:focus {
+    border-color: #12B8BA;
+}
+
+.name_txt, .email {
+	width: 180px;
+	height: 30px;
+	outline: none;
+}
+
+.board_phone {
+	width: 90px;
+	height: 30px;
+	outline: none;
+}
+
+.title_txt {
+	width: 500px;
+	height: 30px;
+	outline: none;
+}
+
+.content_txt {
+	resize: none;
+	width: 600px;
+	height: 600px;
+	outline: none;
+}
+
+
+
+/* 파일 실제 버튼 숨기기 */
+.file_btn {display:none;}	
+
+/* Label을 스타일링하여 버튼처럼 보이게 */
+.custom-file-label {
+    display: inline-block;
+    height:20px;
+    padding: 10px 15px;
+    color: white; 
+    background-color: #12B8BA; 
+    border: 1px solid #0f8c8c; 
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s; 
+}
+
+/* 파일 버튼 마우스 호버 시 */
+.custom-file-label:hover {
+    background-color: #0f8c8c; 
+    border-color: #0b6666; 
+}
+
+/* 선택된 파일 이름 표시 영역 */
+.file-name {
+    display: inline-block;
+    margin-left: 10px;
+    color: #333;
+    vertical-align: middle;
+}			
+
+	
+			   
+/* 하단 버튼 묶음 div */
+#btn_div {
+	margin: 20px;
+	text-align: center;
+}
+
+/* 전체보기 버튼 */
+.list_btn {
+	background: white;
+	width: 180px;
+	height: 50px;
+	font-size: 18px;
+	border: 1px solid gray;
+	cursor: pointer;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+
+.list_btn:hover{
+	background:#F6F6F6;
+	border-color:#0f8c8c;
+}
+
+/* 추가 버튼 */			
+.insert_btn {
+	background: #12B8BA;
+	width: 180px;
+	height: 50px;
+	font-size: 18px;
+	border: 1px solid #0f8c8c;
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+
+.insert_btn:hover {
+	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}  
+			

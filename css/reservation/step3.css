@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* body 스타일 */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f3f3f3;
+}
+
+/* 캘린더 전체 스타일 */
+#calendar {
+	padding : 20px; 
+    max-width: 900px;
+    height: 624px;
+    margin: 80px auto;
+    flex: 2; 
+    background: white;
+    border: 1px solid #ccc;
+	border-top: 2px solid #23507B;
+}
+
+/* 헤더 스타일 */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* 교수별 진료 가능 날짜 강조 */
+.available-date {
+    background-color: #90ee90 !important; /* 연한 녹색 */
+}
+
+/* 공휴일 배경색 */
+.holiday {
+    background-color: #ffcccc !important; /* 연한 빨간색 */
+}
+
+
+
+
+/* 날짜 확장 방지 */
+.fc-daygrid-day {
+    height: auto !important;
+    cursor: pointer;
+}
+
+/* 클릭된 날짜 강조 제거 */
+.fc-daygrid-day:hover {
+    background-color: transparent !important;
+}
+
+.fc-daygrid-day-number {
+    pointer-events: none; /* 숫자만 별도 클릭 방지 */
+}
+#timePage{flex: 1; border: 1px solid #ccc; padding: 10px; height: 600px; overflow-y: auto;max-width: 300px; margin-right: 80px; margin-top: 80px; 
+border-top: 2px solid #23507B;
+background: white;
+}
+#timePage > p{text-align: center; font-size: 24px;}
+#professorInfo{flex: 1; border: 1px solid #ccc; padding: 10px; margin-right: 20px; height: 600px; overflow-y: auto; max-width: 300px; margin-left: 80px; margin-top: 80px; background: white;
+border-top: 2px solid #23507B;
+}
+.pro{width:250px; margin-bottom: 5px;}
+img{object-fit: cover;  width: 150px; height: 200px;}
+#professorInfo > p{text-align: center; font-size: 24px;}
+table {
+	margin: auto;
+	width: 250px;
+	
+}
+.time-slot {
+	width:70px;
+	height:35px;
+    text-align:center;
+    background-color: #12B8BA;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 23px; 
+    margin-top: 10px;
+    
+}
+
+.time-slot:hover {
+	background: #3086C9;
+}
+/* 비활성화된 버튼 스타일 */
+.time-slot:disabled {
+    background-color: #d3d3d3; /* 비활성화된 버튼 배경 */
+    color: #999; /* 비활성화된 버튼 텍스트 */
+    border: 1px solid #ccc; /* 비활성화된 버튼 테두리 */
+    cursor: not-allowed; /* 비활성화된 마우스 커서 */
+    opacity: 0.6; /* 투명도 */
+}
+
+.info{height: 40px;font-size: 18px; padding: 5px; border-bottom: 1px solid #808080;}
+#info_name{font-weight:500;border-bottom: 1px solid #808080; border-top: 1px solid #808080; }
+#info_field{padding: 20px;height: 140px;}
+
+
+
+#back{display:block; margin:auto; text-align: center; bottom: 200px;}
+#back{border: none; padding: 10px 30px; background:#12B8BA ; width: 200px; color: white; font-size: 18px; margin-top: 17px;}
+#back:hover{background: #3086C9; cursor: pointer;}
+

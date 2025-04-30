@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/* Interop 폰트 설정 */
+@font-face {
+  font-family: 'Interop';
+  src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2') format('woff2'),
+       url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* 기본 폰트 적용 */
+body, button, h1, h2, h3, p, label, span, ul, li, pre, input {
+  font-family: 'Interop', sans-serif;
+  font-weight: 500; /* 기본 폰트 굵기 */
+}

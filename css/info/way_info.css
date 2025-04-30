@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+@font-face {
+      font-family: 'Interop';
+      src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+          format('woff2'),
+          url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+          format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+}
+      
+*{margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 17px;}
+
+/* 큰 틀 */
+#container {
+	width: 1000px;
+	margin: 20px auto;
+}
+
+#container>p {
+	font-size: 40px;
+	margin-bottom: 50px;
+	font-weight: 500;
+}
+	
+
+
+/* 상단 큰 지도 */
+#hos_map #map{
+	width: 1000px;
+	height: 400px;
+}
+
+
+
+/* 지하철 안내 */
+#subway {
+	margin-top: 50px;
+}
+
+#subway p {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+#subway table {
+	border-collapse: collapse;
+}
+
+#subway table th {
+	width: 300px;
+	height: 80px;
+	background: #fafafa;
+	border-right:1px solid #b0b0b0;
+}
+
+#subway table td {
+	width: 700px;
+	text-align: center;
+	padding: 5px;
+    color: #4d4d4d;
+    font-size: 16px;
+}
+
+#subway table tr:first-child {
+    border-top: 2px solid #b0b0b0;
+    border-bottom: 2px solid #b0b0b0;
+}
+
+#subway table tr:last-child {
+    border-bottom: 2px solid #b0b0b0;
+}
+
+
+
+/* 버스 안내 */
+#bus {
+	margin-top: 50px;
+}
+
+#bus p {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+#bus table {
+	border-collapse: collapse;
+}
+
+#bus table th {
+	width: 300px;
+	height: 80px;
+	background: #fafafa;
+	border-right:1px solid #b0b0b0;
+}
+
+#bus table td {
+	width: 700px;
+	text-align: center;
+	padding: 5px;
+    color: #4d4d4d;
+    font-size: 16px;
+}
+
+#bus table tr{
+	border-bottom: 1px solid #b0b0b0;
+}
+
+#bus table tr:first-child {
+    border-top: 2px solid #b0b0b0;
+}
+
+#bus table tr:last-child {
+    border-bottom: 2px solid #b0b0b0;
+}
+
+
+
+/* 고속도로 안내 */
+#car {
+	margin-top: 50px;
+}
+
+#car p {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+#car table {
+	border-collapse: collapse;
+}
+
+#car table th {
+	width: 300px;
+	height: 80px;
+	background: #fafafa;
+	border-right:1px solid #b0b0b0;
+}
+
+#car table td {
+	width: 700px;
+	text-align: center;
+	padding: 5px;
+    color: #4d4d4d;
+    font-size: 16px;
+}
+
+#car table tr{
+	border-bottom: 1px solid #b0b0b0;
+}
+
+#car table tr:first-child {
+    border-top: 2px solid #b0b0b0;
+}
+
+#car table tr:last-child {
+    border-bottom: 2px solid #b0b0b0;
+}

@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+/* 큰 틀 */
+#container {
+	width: 1000px;
+	height: 800px;
+	margin: 70px auto;
+	position: relative;
+}
+
+#container p {
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: 70px;
+	margin-bottom: 60px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 1000px;
+	height: 350px;
+	top: 120px;
+	margin-bottom: 20px;
+	text-align: center;
+	table-layout: fixed;
+}
+
+th, td {
+	text-align: center; /* 텍스트 가운데 정렬 */
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+th {
+	background-color: #f4f4f4;
+}
+
+.btn_search{
+	background-color: #12B8BA;
+	padding: 10px 20px;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+#btn_delete{
+	background: #3086C9;
+	border: none;
+	color: white;
+	height: 50px;
+	width: 100px;
+	font-size: 14px;
+	cursor: pointer;
+	float: right;
+}
+
+.alert_warning {
+	color: #856404;
+	background-color: #fff3cd;
+	border: 1px solid #ffeeba;
+	padding: 10px;
+	margin: 20px auto 0; /* 가운데 정렬 */
+	width: 1000px; /* 서치 컨테이너와 동일한 너비 */
+	text-align: center;
+	font-size: 18px;
+	margin-top: 100px;
+}
+

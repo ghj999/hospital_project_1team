@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Interop';
+  src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+      format('woff2'),
+      url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+*{margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;}
+
+#main_div{
+	width: 1000px;
+	margin: 20px auto;
+}
+
+/* 회원가입 단계 */
+#register_step{
+	width: 1000px;
+	height: 100px;
+	margin: 30px auto;
+	border-collapse: collapse; 
+	border: 1px solid #D2D2DE;
+	color: #D2D2DE;
+}
+#register_step tr td{
+	padding-left: 30px;
+	font-size: 24px;	
+}
+#register_step a{
+	font-size: 24px;	
+	font-weight: 600;	
+}
+#register_step #step1{
+	background-color: #3086C9;
+	color: white;
+}
+#register_step #step1 a{
+	color: #4eaaf2;
+}
+
+#register_text{
+	display: block;
+	font-size: 40px;
+}
+
+/* 로고 + 설명 */
+#expl_div {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#expl_div img {
+	width: 200px;
+	margin-bottom: 10px;
+}
+
+#expl_div a {
+	display: block;
+	margin-top: 10px;
+	line-height: 1.5;
+	color: #A2A2A2;
+}
+#expl_div a:first-child{
+	font-size: 18px;
+}
+
+/* 약관 및 체크박스 영역 */
+#chk_all {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 20px 0;
+	width: 1000px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 500;
+	background-color: #f2f2f2;
+}
+
+#chk_all_box {
+	margin-right: 10px;
+}
+
+/* 이용약관, 개인정보 수집 */
+#main_div .title_text,
+#main_div .title_ess {
+    font-size: 20px;
+    font-weight: 500;
+    display: inline-block;
+    margin: 20px 0;
+}
+#main_div .title_ess{
+	color: #3086C9;
+}
+
+/* 이용약관, 개인정보 수집 설명 div */
+#chk_1_expl, #chk_2_expl {
+	width: 960;
+	max-height: 150px;
+	overflow-y: auto;
+	border: 1px solid #DADADA;
+	padding: 15px;
+	background-color: #FFFFFF;
+}
+
+/* 이용약관, 개인정보 수집 checkbox div */
+#chk_1_div, #chk_2_div {
+	width: 949px;
+	padding: 25px;
+	border: 1px solid #DADADA;
+	border-top: none;
+	text-align: left;
+	font-size: 18px;
+}
+
+#chk_1_div input, #chk_2_div input {
+	margin-right: 10px;
+	vertical-align: middle; /* 수직 정렬 */
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    width: 20px; 
+    height: 20px;
+    border: 2px solid #DADADA; /* 테두리 */
+    background-color: white; /* 배경 하얀색 */
+    border-radius: 0; /* 정사각형 */
+    vertical-align: middle; /* 텍스트와 수직 정렬 */
+    cursor: pointer; /* 마우스 커서 */
+    margin-right: 10px; /* 텍스트와의 간격 */
+    appearance: none; /* 브라우저 기본 스타일 제거 */
+    -webkit-appearance: none; /* 웹킷 브라우저 기본 스타일 제거 */
+    -moz-appearance: none; /* 모질라 브라우저 기본 스타일 제거 */
+    position: relative; /* 체크박스 내부 아이콘 배치를 위해 */
+}
+
+input[type="checkbox"]:checked {
+    background-color: #FFFFFF; /* 체크된 상태에서도 배경 하얀색 */
+    border: 1px solid #E2E2E2; /* 테두리 유지 */
+}
+
+input[type="checkbox"]:checked::before {
+    content: "✔"; /* 체크 표시 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: #707070;
+}
+
+
+/* 버튼 스타일 */
+#next_btn {
+	display: block;
+	margin: 30px auto;
+	padding: 10px 30px;
+	font-size: 18px;
+	color: #FFFFFF;
+	background-color: #3086C9;
+	border: none;
+	cursor: pointer;
+}
+
+#next_btn:hover {
+	background-color: #256BA1;
+}
+
+#next_btn:active {
+	background-color: #1E5A87;
+	box-shadow: none;
+}

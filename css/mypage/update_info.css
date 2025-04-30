@@ -1,0 +1,220 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'Interop';
+	src:
+		url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+		format('woff2'),
+		url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Interop';
+	font-weight: 300;
+	font-size: 18px;
+}
+input[type="button"]{
+	cursor: pointer;	
+}
+
+#main_div {
+	width: 1000px;
+	height: 1000px;
+	margin: 0px auto;
+}
+
+#update_text {
+	display: block;
+	font-size: 40px;
+	font-weight: 500;
+	margin: 20px 0px;
+}
+
+/* hr태그 */
+hr {
+	width: 1000px;
+}
+
+/* 비밀번호 변경, 기본정보 변경 button ====================================================*/
+#btn_div {
+	position: relative;
+}
+
+#btn_div input {
+	width: 500px;
+	height: 55px;
+	border: none;
+	border-bottom: 2px solid #12B8BA !important;
+	transition: all 0.2s ease;
+}
+
+#change_pwd_btn {
+	background-color: #12B8BA;
+	color: white;
+	position: absolute;
+}
+
+#change_info_btn {
+	background-color: white;
+	color: black;
+	position: absolute;
+	left: 500px;
+}
+
+/* 비밀번호 변경에 속한 태그들 ====================================================*/
+#update_pwd {
+	text-align: center;
+	position: absolute;
+	top: 250px;
+}
+
+#update_pwd #title {
+	font-size: 24px;
+	margin: 20px;
+}
+
+#update_pwd #sub_title {
+	font-size: 15px;
+	margin: 20px;
+}
+
+#update_pwd #pat_name {
+	color: #3086C9;
+}
+
+#update_pwd input {
+	border: 1px solid #E2E2E2;
+	width: 320px;
+	height: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#update_pwd table {
+	width: 600px;
+	margin: 20px auto;
+}
+
+#update_pwd hr {
+	width: 1000px;
+	height: 1px;
+	margin: 0px auto;
+	border: none;
+	background: #D2D2D2;
+}
+
+#update_pwd #pwd_btn, #update_pwd #back_btn {
+	border: none;
+	width: 150px;
+	height: 40px;
+	border: 1px solid lightgray;
+	background-color: white;
+	margin-bottom: 20px;
+}
+
+/* 기본정보 변경에 속한 태그들 ====================================================*/
+#update_infomation {
+	text-align: center;
+	position: absolute;
+	top: 270px;
+}
+
+#update_infomation table {
+	text-align: left;
+	border-collapse: collapse;
+	margin: 10px auto;
+	width: 1000px;
+}
+
+#update_infomation table th, td {
+	padding: 15px 10px;
+}
+
+#update_infomation table th {
+	padding-left: 45px;
+	width: 200px;
+}
+
+#update_infomation table tr {
+	border-top: 1px solid #D2D2D2;
+}
+
+/* input[type="text"] 태그 - 모든 태그 기본설정 */
+#update_infomation input {
+	border: 1px solid #E2E2E2;
+	width: 250px;
+	height: 35px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/*중복확인 버튼, 주소찾기 버튼 */
+#update_infomation #address_btn {
+	border: none;
+	width: 130px;
+	height: 38px;
+	color: white;
+	background-color: #12B8BA;
+}
+
+/* input[type="text"] 태그 - 이메일 */
+#update_infomation .email {
+	width: 200px;
+}
+/* option 태그 - 이메일주소 */
+#update_infomation #email_addr {
+	border: 1px solid #E2E2E2;
+	height: 40px;
+	width: 120px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* input[type="text"] 태그 - 주소 */
+#update_infomation #address_post {
+	width: 120px;
+}
+
+#update_infomation #address_detail, 
+#update_infomation #address_road {
+	width: 400px;
+	margin-top: 10px;
+}
+
+/* option 태그 - 전화번호 */
+#update_infomation .pat_phone {
+	border: 1px solid #E2E2E2;
+	height: 40px;
+	width: 80px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* 성별 선택 radio */
+#update_infomation .gender {
+	width: 40px;
+	height: 20px;
+	accent-color: #3086C9;
+}
+
+/* 가입취소, 회원가입 버튼 */
+#update_infomation #back_btn, 
+#update_infomation #reg_btn {
+	border: none;
+	width: 150px;
+	height: 40px;
+	border: 1px solid lightgray;
+	background-color: white;
+	margin: 20px 0;
+}
+
+#update_infomation .essential {
+	font-size: 10px;
+	color: red;
+}

@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+/* Global styles */
+@font-face {
+    font-family: 'Interop';
+    src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2') format('woff2'),
+         url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Interop';
+    font-weight: 300;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#main-div {
+    background-color: #ffffff;
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#logo {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+#payment-details-list {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+    text-align: left;
+}
+
+#payment-details-list li {
+    margin-bottom: 10px;
+    color: #555555;
+}
+
+#payment-price {
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #12B8BA;
+}
+
+#payment-price a {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3086C9;
+}
+
+#payment-method {
+    margin: 20px 0;
+}
+
+#agreement {
+    margin: 20px 0;
+    text-align: left;
+    font-size: 14px;
+    color: #777777;
+}
+
+.button {
+    display: inline-block;
+    background-color: #12B8BA;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #3086C9;
+}

@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+/* 큰 틀 */
+#container {
+	width: 1000px;
+	height: 800px;
+	margin: 70px auto;
+	position: relative;
+}
+
+#container p {
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: 70px;
+	margin-bottom: 60px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 1000px;
+	height: 350px;
+	top: 120px;
+	margin-bottom: 20px;
+	text-align: center;
+	table-layout: fixed;
+}
+
+th, td {
+	text-align: center; /* 텍스트 가운데 정렬 */
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+th {
+	background-color: #f4f4f4;
+}
+
+.btn_dept{
+	margin: 3px;
+	cursor: pointer;
+	width: 130px;
+	padding: 5px 10px;
+	border: none;
+	background-color: white;
+	border: 1px solid #3086C9;
+	color: #3086C9;
+	transition: 0.3s;
+}
+
+.btn_dept:hover{
+	background-color: #3086C9;
+	color: white;
+}
+
+.btn_dept.active {
+    background-color: #12B8BA;
+	border: 1px solid #12B8BA;
+	color: white;
+}
+
+.pro_table_input{
+	width: 95%; /* 입력 필드의 너비 조정 */
+    padding: 10px; /* 안쪽 여백 */
+    font-size: 18px; /* 글씨 크기 */
+    outline: none; /* 포커스 시 기본 효과 제거 */
+    border: none;
+    cursor: pointer;
+}
+
+.btn_weekday{
+	margin: 3px;
+	cursor: pointer;
+	width: 100px;
+	padding: 5px 10px;
+	border: none;
+	background-color: white;
+	border: 1px solid #3086C9;
+	color: #3086C9;
+	transition: 0.3s;
+}
+
+.btn_weekday:hover{
+	background-color: #3086C9;
+	color: white;
+}
+
+.btn_weekday.active{
+	background-color: #12B8BA;
+	color: white;
+}
+
+.btn_under{
+	margin: 10px;
+	cursor: pointer;
+	width: 150px;
+	padding: 10px;
+	border: none;
+	background-color: #12B8BA;
+	border: 1px solid #12B8BA;
+	font-size: 18px;
+	color: white;
+}
+
+
+
+
+
+

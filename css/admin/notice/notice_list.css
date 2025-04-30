@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+/* 큰 틀 */
+#container {
+	width: 1000px;
+	height: 800px;
+	margin: 70px auto;
+	position: relative;
+}
+
+#container p {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+/* select, 검색어, 검색 버튼 묶은 것*/
+#search_div {
+	position: absolute;
+	right: 1px;
+	margin-bottom: 20px;
+}
+
+/* 검색 */
+#search {
+	height: 30px;
+}
+
+#search_text {
+	height: 25px;
+}
+
+#search_btn {
+	height: 30px;
+	background: #12B8BA;
+	border: none;
+	color: white;
+	width: 70px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+/* 공지사항 */
+#notice_div img {
+	width: 25px;
+	height: 25px;
+}
+
+#notice_div table {
+	border-collapse: collapse;
+	width: 1000px;
+	height: 350px;
+	position: absolute;
+	top: 120px;
+	text-align: center;
+	table-layout: fixed;
+}
+
+#notice_div table tr:first-child {
+	border-bottom: 1px solid #ddd;
+}
+
+#notice_div table th {
+	border-top: 2px solid #ddd;
+}
+
+#notice_div table td {
+	border-bottom: 1px solid #ddd;
+	padding: 20px;
+}
+
+/* 제목 a태그 */
+#notice_div a {
+	text-decoration: none;
+	color: black;
+}
+
+/* 제목 td*/
+#title_td {
+	padding: 10px;
+}
+
+#title_td a:hover {
+	color: #3086C9;
+}
+
+.buttons {
+	background: #3086C9;
+	border: none;
+	color: white;
+	height: 50px;
+	width: 70px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.alert_warning {
+	color: #856404;
+	background-color: #fff3cd;
+	border: 1px solid #ffeeba;
+	padding: 10px;
+	margin: 20px auto 0; /* 가운데 정렬 */
+	width: 1000px; /* 서치 컨테이너와 동일한 너비 */
+	text-align: center;
+	font-size: 18px;
+	margin-top: 100px;
+}
+

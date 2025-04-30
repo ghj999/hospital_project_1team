@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+/* 큰 틀 */
+#container {
+	width: 1000px;
+	height: 800px;
+	margin: 70px auto;
+	position: relative;
+}
+/* 카테고리명 */
+#container p {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+table {
+	border-collapse: collapse; /* 중복된 경계 제거 */
+	width: 1000px; /* 테이블 너비 설정 */
+	margin: 20px auto; /* 가운데 정렬 */
+	margin-top: 100px;
+}
+
+table td, table th {
+	padding: 20px; /* 셀 내부 여백 */
+	text-align: left; /* 텍스트 정렬 */
+	border: 1px solid #ddd; /* 셀 테두리 */
+}
+
+#banner_name {
+	outline: none;
+	border: none;
+	width: 100%; /* td의 너비만큼 확장 */
+	box-sizing: border-box; /* 패딩 포함하여 너비 계산 */
+}
+
+/* 버튼 */
+#back_btn, #ins_btn {
+	background: white;
+	border: none;
+	color: #3086C9;
+	border: 1px solid #3086C9;
+	height: 50px;
+	width: 150px;
+	font-size: 15px;
+	margin: 20px auto;
+	cursor: pointer;
+}
+
+
+

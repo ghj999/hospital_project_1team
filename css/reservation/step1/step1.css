@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+body {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  background: #f3f3f3;
+  background-image: url('/hos/resources/images/예약하기_배경화면.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+
+#left {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  min-width: 650px; /* 초기 상태에서도 최소 공간 확보 */
+  max-width: 650px;
+  overflow-x: hidden; /* 가로 스크롤바 제거 */
+}
+
+#center {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  min-width: 650px; /* 초기 상태에서도 최소 공간 확보 */
+  max-width: 650px;
+  
+}
+
+#right {
+  flex: 1;
+  padding: 10px;
+  
+
+}
+#box{
+  height: 450px;
+  overflow-y:scroll;
+ }
+#box::-webkit-scrollbar {
+    width: 5px;
+}
+#box::-webkit-scrollbar-track { 
+    background-color: white;
+}
+#box::-webkit-scrollbar-thumb { 
+    background-color: #12B8BA;
+}
+#box::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* hover 효과 */
+#box::-webkit-scrollbar-thumb:hover {
+    background-color: #0F9C9B;
+}
+
+/* 코너에 라운드 효과 */
+#box::-webkit-scrollbar-track,
+#box::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+}
+
+.pat_name{ height: 180px; font-size: 24px; width: 370px;margin-left:15px; margin-bottom: 20px;}
+.pat_name > p{line-height: 180px;}
+#left > #step1 > h1{ text-align: center;}
+#left > #step1 > h3{ text-align: center;}
+#left > #step1 > p{ text-align: center;}
+#left > .left-contanier{margin: 50px 130px; text-align: center; border: 1px solid #D8D8D8; width:400px; height: 700px; background-color: white;
+border-top: 2px solid #23507B; }
+#left > .left-contanier > button{ border: none; padding: 10px 30px; background:#12B8BA ; margin-top:5px; width: 200px; color: white; font-size: 18px;} 
+hr{width: 300px; margin-top: 20px;}
+h2{margin-top: 50px;}
+#left > .left-contanier > button:hover {background: #3086C9; cursor: pointer;}
+input{font-size: 18px; padding: 5px;}
+pre{font-size: 18px;}

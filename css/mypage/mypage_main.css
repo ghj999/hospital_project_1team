@@ -1,0 +1,275 @@
+@charset "UTF-8";
+
+@font-face {
+	  font-family: 'Interop';
+	  src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+	      format('woff2'),
+	      url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+	      format('woff');
+	  font-weight: normal;
+	  font-style: normal;
+	  font-display: block;
+}
+
+*{margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;}
+
+.mypage_btn{
+	cursor: pointer;	
+   	background: #12B8BA;
+   	color: white;
+   	cursor: pointer;
+}
+
+.mypage_btn:hover{
+   	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}
+
+
+#main_div{
+ 	display: flex;
+ 	justify-content: space-between;
+ 	flex-wrap: wrap;
+ 	width: 1000px;
+ 	margin: 20px auto;
+ 	margin-bottom: 40px;
+ }
+ 
+ #main_div hr{
+ 	background: black;
+ 	height: 1px;
+ 	border: none;
+ 	margin-top: 10px;
+ }
+
+/* p태그 - 마이페이지 */
+#mypage_title{
+	display: block;
+	width: 1000px;
+	font-size: 40px;
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
+/* ================================================= */
+/* 환자정보 div */
+#patient_info_div {
+	width: 455px;
+	height: 220px;
+    padding: 20px;
+    border: 1px solid #D8D8D8; /* 테두리 */
+   	border-top: 2px solid #12B8BA; /* 테두리 */
+    text-align: left;
+    display: inline-block;
+}
+/* p태그 - ~님(환자번호)*/
+#welcome_text {
+    display: inline;
+    margin-right: 5px;
+    font-size: 24px;
+}
+
+/* table 태그 - 환자정보테이블 */
+#patient_table {
+    border-spacing: 0 15px; /* 행 간 간격 15px*/
+}
+#patient_table th{
+	width: 60px;
+	border-right: 2px solid black;
+}
+
+/* 회원정보 수정, 회원탈퇴 버튼 */
+#container1_btn1, #container1_btn2{
+   	width: 220px;
+   	padding: 10px 0px;
+   	border: none;
+   	color: white;
+   	background-color: #12B8BA;
+	transition: all 0.2s ease;
+}
+#container1_btn1:hover, #container1_btn2:hover{
+	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}
+#container1_btn1{
+   	margin-right: 9px;
+}
+
+/* ================================================= */
+/* 예약내역 div */
+#res_info_div {
+	width: 455px;
+	height: 220px;
+    padding: 20px;
+    border: 1px solid #D8D8D8; /* 테두리 */
+	border-top: 2px solid #12B8BA; /* 테두리 */
+	text-align: left;
+	display: inline-block;
+	position: relative;
+}
+#res_info_div  a{
+	font-size: 24px;
+}
+
+#res_info_div p{
+	font-size: 18px;
+	margin: 10px 0;
+}
+   
+#res_info_div input[type='button']{
+	width: 25px;
+	height: 25px;
+	border: none;
+	background-color: #12B8BA;
+	color: white;
+	text-align: center;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+#res_info_div input[type='button']:hover{
+	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}
+
+/* 예약내역 ul & li */
+#res_ul_div {
+	overflow-y: scroll; /* 스크롤바 추가 */
+	height: 170px;
+	padding: 0px;
+	margin-top: 10px;
+}
+#res_ul_div ul{
+	margin-left:20px;
+	font-size: 18px;
+}
+#res_ul_div ul li{
+	font-size: 18px;
+    margin-top: 5px !important;
+    list-style: square;
+}
+#res_ul_div ul li:first-child{
+     margin-top: 0px !important;
+}
+
+/* 스크롤바 css */
+#res_ul_div::-webkit-scrollbar {
+    width: 5px;
+}
+#res_ul_div::-webkit-scrollbar-track { 
+    background-color: white;
+}
+#res_ul_div::-webkit-scrollbar-thumb { 
+    background-color: #12B8BA;
+}
+#res_ul_div::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* hover 효과 */
+#res_ul_div::-webkit-scrollbar-thumb:hover {
+    background-color: #0F9C9B;
+}
+
+/* 코너에 라운드 효과 */
+#res_ul_div::-webkit-scrollbar-track,
+#res_ul_div::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+}
+
+/* ================================================= */
+/* 증명서 발급안내 div */
+.container_cert{
+	width: 288px;
+	height: 220px;
+    padding: 20px;
+    border: 1px solid #D8D8D8; /* 테두리 */
+   	border-top: 2px solid #12B8BA; /* 테두리 */
+    display: inline-block;
+    position: relative;
+}
+/* a태그 - 증명서발급안내 */
+#cert_text{
+	text-decoration: none;
+	font-size: 24px;
+	color: black;
+}
+/* ul태그 - 증명서발급안내 */
+.container_ul {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.container_ul li{
+	font-size: 16px;
+	margin-top: 5px;
+	list-style: disc;
+}
+/* 증명서 발급 버튼 */
+.container2_buttons{
+   	width: 290px;
+   	padding: 10px 10px;
+   	border: none;
+   	color: white;
+   	background-color: #12B8BA;
+	transition: all 0.2s ease;
+	position: absolute;
+	bottom: 20px;
+	cursor: pointer;
+}
+.container2_buttons:hover{
+	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}
+                 
+/* ================================================= */
+/* container2 클래스 객체들(진료비결제, 작성글관리 버튼) */
+#etc_div {
+    display: flex;
+	justify-content: space-between;
+	gap: 5px; /* 요소 간 간격 추가 */
+  	flex-wrap: wrap;
+}
+#etc_div div{
+    width: 288px;
+	height: 220px;
+    padding: 20px;
+    margin-top: 10px;
+    border: 1px solid #D8D8D8;
+    border-top: 2px solid #12B8BA;
+    display: inline-block;
+    position: relative;
+}
+
+#etc_div div p{
+	font-size: 16px;
+}
+       
+.container2 input[type='button']{
+	width: 290px;
+    padding: 10px 10px;
+    border: none;
+    color: white;
+    background-color: #12B8BA;
+	transition: all 0.2s ease;
+	position: absolute;
+	bottom: 20px;
+	cursor: pointer;
+}
+.container2 input[type='button']:hover{
+	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}
+        
+.container2 a{
+	font-size: 24px;
+}
+        
+.container2 p{
+	margin-top: 10px;
+    line-height: 1.5;
+}
+        
+/* 예약내역, 진료비결제, 작성글관리 버튼 */
+.container3_image{
+	width: 150px;
+}

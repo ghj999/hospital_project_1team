@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Interop';
+  src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+      format('woff2'),
+      url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+*{margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;}
+input[type="button"]{
+	cursor: pointer;	
+}
+
+#main_div{
+	width: 1000px;
+	margin: 20px auto;
+	margin-bottom: 80px;
+}
+
+/* a태그 - "예약내역" */
+#reservation_text{
+	display: block;
+	font-size: 40px;
+	margin-bottom: 30px;
+}
+
+/* hr태그 - 예약내역 바로아래 위치 */	
+#hr_main, #hr_sub{
+	border: 0;
+	background-color: #12B8BA;
+	height: 2px;
+}		
+#hr_main{
+	margin-bottom: 20px;
+}
+#hr_sub{
+	margin-top: 20px;
+}
+
+/* 스크롤 추가 */		
+#sub_div{
+	overflow-y: scroll;
+	height: 600px;
+	padding: 0;
+}
+
+/* 예약내역 div */
+.reser_div {
+    position: relative;
+    overflow: hidden;
+    margin: 0px 10px;
+}
+
+.reser_div img {
+    float: left; /* 이미지를 왼쪽으로 정렬 */
+    margin-right: 20px; /* 이미지와 텍스트 간격 */
+    width: 120px;
+    height: 160px;
+    object-fit: cover;
+}
+
+/* dept_name과 table을 묶는 div 추가 */
+.reser_info {
+    display: inline-block; /* 블록 요소를 인라인으로 변경 */
+    vertical-align: top;
+}
+
+/* dept_name (진료과) */
+.dept_name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px; /* 테이블과의 간격 */
+}
+
+/* 진료일정, 위치 테이블 */
+.reser_info table {
+    width: auto; /* 부모 요소에 맞춤 */
+}
+
+.reser_div:first-child{
+	padding-top: 0;
+}
+.reser_div:first-child .dept_name, 
+.reser_div:first-child .image{
+    margin-top: 0;
+}
+
+.reser_div:last-of-type {
+    padding-bottom: 0;
+}
+.reser_div:last-of-type .dept_name, 
+.reser_div:last-of-type .image {
+	margin-bottom: 0;
+}
+#sub_div hr:last-of-type {
+    display: none;
+}
+
+/* 진료과 + 교수명 div */
+.dept_name{
+	margin: 10px 0px;
+}
+.dept_name a{
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+/* 교수이미지 */
+.image{
+	float: left;
+	margin: 10px;
+	margin-right: 20px;
+	width: 120px;
+	height: 160px;
+}
+
+/* 진료과 */
+.dept{
+	padding: 7px;
+	border-radius: 10px;
+	background-color: #12B8BA;	
+	color: white;
+}
+
+/* 진료일정, 위치 table */
+#sub_div table {
+	display: inline-block;
+	vertical-align: top;
+}
+#sub_div  table td{
+	padding: 3px 0px;
+	width: 180px;
+	color: #4f4f4f;
+}
+#sub_div  table th{
+	text-align: left;
+	width: 130px;
+}
+
+#sub_div .res_time_td{
+	font-size: 17px;
+}
+
+
+/* 버튼들을 테이블 오른쪽 끝으로 정렬 */
+.btn_div {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btn_div input[type="button"] {
+    font-size: 18px;
+    width: 150px;
+    height: 40px;
+    border: 1px solid #D2D2D2;
+    background-color: #G2G2G2;
+    margin-bottom: 5px;
+    transition: background-color 0.2s;
+}
+
+.btn_div input[type="button"]:hover {
+    background-color: #E2E2E2;
+}
+
+/* 스크롤바 css */
+#sub_div::-webkit-scrollbar {
+	margin-top: 16px;
+    width: 5px;
+}
+#sub_div::-webkit-scrollbar-track { 
+    background-color: white;
+}
+#sub_div::-webkit-scrollbar-thumb { 
+    background-color: #12B8BA;
+}
+#sub_div::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* hover 효과 */
+#sub_div::-webkit-scrollbar-thumb:hover {
+    background-color: #0F9C9B;
+    transition: all 0.2s; /* 작동 안 됨 */
+}
+
+/* 코너에 라운드 효과 */
+#sub_div::-webkit-scrollbar-track,
+#sub_div::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+}
+
+/* 예약내역 없을 때 */
+.no_reservation a{
+	display: block;	
+	text-align: center;
+	font-size: 24px;
+	width: 800px;
+	padding: 100px 0;
+	margin: 0px auto;
+	margin-top: 80px;
+	border: 2px solid #C2C2C2;
+	border-radius: 25px;
+}
+
+.no_reservation input[type='button']{
+	display: block;
+	width: 150px;
+	padding: 10px 0;
+	margin: 20px auto;
+	background-color: #12B8BA;
+	border: none;
+	color: white;
+}
+.no_reservation > input[type='button']:hover{
+	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}

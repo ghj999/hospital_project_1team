@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'GamtaeDotum'; /* 폰트 이름 설정 */
+    src: url('/fonts/gamtae-dotum.woff2') format('woff2'),
+         url('/fonts/gamtae-dotum.woff') format('woff'),
+         url('/fonts/gamtae-dotum.ttf') format('truetype'); /* 폰트 파일 경로 */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'GamtaeDotum', sans-serif; /* 기본 폰트 설정 */
+}

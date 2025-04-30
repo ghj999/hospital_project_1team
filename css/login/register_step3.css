@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Interop';
+  src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+      format('woff2'),
+      url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+*{margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;}
+
+#main_div{
+	width: 1000px;
+	margin: 20px auto;
+	margin-bottom: 120px;
+}
+
+/* 회원가입 단계 */
+#register_step{
+	width: 1000px;
+	height: 100px;
+	margin: 30px auto;
+	border-collapse: collapse; 
+	border: 1px solid #D2D2DE;
+	color: #D2D2DE;
+}
+#register_step tr td{
+	padding-left: 30px;
+	font-size: 24px;	
+}
+#register_step a{
+	font-size: 24px;	
+	font-weight: 600;	
+}
+#register_step #step3{
+	background-color: #3086C9;
+	color: white;
+}
+#register_step #step3 a{
+	color: #4eaaf2;
+}
+
+#register_text{
+	display: block;
+	font-size: 40px;
+}
+
+/* 로고 + 설명 */
+#expl_div {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#expl_div img {
+	width: 80px;
+	margin-top: 20px;	
+	margin-bottom: 10px;
+}
+
+#expl_div a {
+	display: block;
+	margin-top: 10px;
+	line-height: 1.5;
+	color: #A2A2A2;
+}
+
+#expl_div #title{
+	font-size: 24px;
+	font-weight: 500;	
+	color: black;
+}
+
+
+/* 버튼 스타일 */
+input[type="button"] {
+	display: block;
+	margin: 30px auto;
+	padding: 10px 30px;
+	font-size: 18px;
+	color: #FFFFFF;
+	background-color: #3086C9;
+	border: none;
+	cursor: pointer;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="button"]:hover {
+	background-color: #256BA1;
+}
+
+input[type="button"]:active {
+	background-color: #1E5A87;
+	box-shadow: none;
+}

@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Interop';
+  src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+      format('woff2'),
+      url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+		
+*{margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;}
+
+input[type="button"]{
+	cursor: pointer;	
+}
+
+#main_div{
+	width: 1000px;
+	margin: 100px auto;
+	margin-bottom: 300px;
+	text-align: center;
+}
+
+#main_div hr{
+	width: 980px;
+	margin: 10px auto;
+	background: #12B8BA;
+}
+	
+#main_div p{
+	display: block;
+	margin: 20px 0;
+	font-size: 24px;
+}
+
+#main_div a{
+	display: block;
+	margin: 10px 0;
+}
+
+#main_div a b{
+	font-weight: bold;
+}
+
+#sub_title{
+	font-size: 15px;
+	margin: 20px auto;
+}
+
+#main_btn, #login_btn {
+	width: 150px;
+	height: 40px;
+	margin: 20px 0;
+	background-color: #12B8BA;
+	color: white;
+	border: none;
+}

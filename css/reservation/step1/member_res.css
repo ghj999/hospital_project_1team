@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+#center > .center-container{margin: 50px 90px; text-align: center; border: 1px solid #D8D8D8; width:400px; height: 700px; background-color: white;
+	position: relative; 
+	border-top: 2px solid #23507B;}
+hr{width: 340px; margin-top: 20px;}
+#member_info{text-align: left; margin-left: 50px;}
+#pat_name{margin-top:10px; margin-bottom: 20px;}
+
+#phone > p{margin-bottom: 10px;}
+
+#phone{text-align: left; margin-left: 50px; margin-top: 30px;}
+#front, #middle, #back{ width: 70px;}
+#agree{border: 1px solid #D8D8D8; width: 340px; margin: 20px auto; height: 100px;}
+#next{margin: 20px auto; }
+#next > input{border: none; padding: 10px 30px; background:#12B8BA ; margin-top:7px; width: 200px; color: white; font-size: 18px;}
+#next > input:hover{background: #3086C9; cursor: pointer;}
+.drop-down:hover>.sub {
+	display: block;
+}
+#down{margin-top: 30px;}
+pre{font-size: 12px; color: gray;}
+#pat_fornt, #pat_middle, #pat_back{width: 70px; margin-top: 10px; }
+
+.sub {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	border: 1px solid #ccc;
+	padding: 10px;
+}

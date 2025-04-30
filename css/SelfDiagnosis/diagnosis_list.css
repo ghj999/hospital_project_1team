@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+body {
+	font-family: Interop;
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+}
+
+.title {	
+    width: 1200px;
+    color: white;
+    display: flex;
+    justify-content: space-between; /* 요소들을 양 끝으로 정렬 */
+    align-items: center;
+    height: 60px; /* 고정 높이 설정 */
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.subject{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+/* 버튼 그룹을 감싸는 div 추가 */
+.button-group {
+    display: flex;
+    gap: 10px; /* 버튼 간 간격 */
+}
+
+button {
+    background-color: #3086C9; /* 버튼 배경색 */
+    color: white;
+    padding: 10px 20px; /* 패딩 조정 */
+    cursor: pointer;
+    font-size: 18px; /* 글자 크기 */
+    font-family: Interop;
+    border: 1px solid #3086C9;
+    width: 130px;
+}
+
+button:hover {
+    background-color: #fff; /* 호버 시 색상 변경 */
+    color: #12B8BA;
+    border: 1px solid #12B8BA;
+}
+
+.diagnosis-box {
+	width: 1200px;
+	height: 550px;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px;
+	overflow: auto; /* 내용 넘칠 시 스크롤 */
+	margin: 50px auto; /* 좌우 마진을 auto로 설정 */
+	margin-top: 10px;
+}
+
+h2 {
+    margin-bottom: 20px; /* 제목 아래에 20px 간격 추가 */
+    font-size: 24px;
+    font-weight: normal;
+	font-style: normal;
+    font-display: block;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 18px; /* 글자 크기 줄임 */
+}
+
+td {
+    text-align: left;
+    border: none; /* 테두리 제거 */
+    font-size: 18px; /* 셀 텍스트 크기 */
+    word-break: break-word; /* 긴 텍스트 줄바꿈 */
+    cursor: pointer;
+    padding: 12px;
+}
+
+td::before {
+    content: "●"; /* 원모양 기호 추가 */
+    color: black; /* 원의 색상 */
+    margin-right: 8px; /* 원과 텍스트 간격 */
+    font-size: 10px; /* 원 크기 */
+}
+
+td:hover {
+    color: #12B8BA;
+}
+
+/* diagnosis-box_inner 내부 스크롤바 스타일 */
+.diagnosis-box_inner {
+    max-height: 530px; /* 스크롤 가능하도록 최대 높이 설정 */
+    overflow-y: auto; /* 세로 스크롤바 활성화 */
+}
+
+/* 스크롤바 너비 */
+.diagnosis-box_inner::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* 스크롤바 트랙 스타일 */
+.diagnosis-box_inner::-webkit-scrollbar-track {
+    border-radius: 5px;
+}
+
+/* 스크롤바 핸들(움직이는 부분) 스타일 */
+.diagnosis-box_inner::-webkit-scrollbar-thumb {
+    background: #12B8BA;
+    border-radius: 5px;
+    border: 2px solid #f0f0f0;
+}
+
+
+

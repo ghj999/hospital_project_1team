@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+body {margin: 0; padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;}
+
+/* 큰 틀 */
+#container {
+	width: 1000px;
+	margin: 70px auto;
+	position: relative;
+}
+
+#container>p {
+	font-size: 40px;
+	margin-bottom: 50px;
+	font-weight: 500;
+}
+/* --------------------- 상단 내용 ----------------------------- */
+.line2{
+	background:gray;
+}
+
+/* 상단 정보 */
+#title{
+	text-align: center;
+	margin: 30px 60px;
+}
+#title p{
+	font-size:30px;
+}
+
+#period{
+	text-align: center;
+	margin: 20px;
+	
+}
+#period p{
+	font-size:19px;
+}
+
+#hit_and_regdate{
+	text-align: center;
+	margin: 20px;
+}
+#hit_and_regdate p{
+	font-size:16px;
+	color:#5a5a5a;
+}
+
+#contents pre{
+	font-size:17px;
+	white-space: pre-wrap;
+	word-break: break-all;
+	overflow: auto;
+	margin: 30px;
+	/* 폰트 */
+	padding: 0; font-family: 'Interop'; font-weight: 300; font-size: 18px;
+	color:#1a1a1a;
+	}
+
+/* 파일첨부 div */
+#file{
+	width: 1000px;
+	height: 50px;
+	background: #eeeeee;
+	
+}
+#file p{
+	display:inline-block;	
+	margin: 16px 25px;
+}
+
+#file a{
+	color: #474747;
+	font-size:17px;
+}
+
+.line3{
+	margin-top: 100px;
+}
+
+.line4{
+	margin-top: 5px;
+}
+
+.line3, .line4{
+	border:none;
+	background: #12B8BA;
+	height: 2px;
+}
+
+/* -------------------------- 댓글입력 -------------------------- */
+
+/* 프로필, 이름 div */
+.comment_header {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 이미지와 텍스트 간 간격 조정 */
+}
+.comment_header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover; /* 이미지가 비율을 유지하며 영역을 꽉 채움 */
+    border: 2px solid #3086C9;
+}
+.comment_header p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* 입력, 버튼 div */
+.comment_body {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end; /* 하단 정렬 */
+}
+
+/* 댓글 입력란 */
+.comment_body {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+}
+#comment_input_div textarea {
+    width: 850px; /* 기존 900px보다 조금 줄여서 여백 확보 */
+    height: 60px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #d3d3d3;
+    transition: border-color 0.3s ease-in-out;
+    resize: none;
+}
+.comm_insert_btn {
+    width: 60px; /* 버튼 크기 조정 */
+    height: 35px;
+    background: #12B8BA;
+    font-size: 15px;
+    border: 1px solid #0f8c8c;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.comm_insert_btn:hover{
+	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}
+
+/* --------------------------- 댓글 조회 ------------------------------ */
+/* 댓글조회 div */
+.comment_list{
+	position: relative;
+	height: 150px;
+}
+.comment_list img{
+	width: 40px;
+	height: 40px;
+	margin: 0px;
+}
+.comment_list p{
+	position: absolute;
+	left: 60px;
+	top: 15px;
+}
+.comment_list pre{
+	margin: 5px;
+}
+
+/* --------------------------- 페이지 처리 -------------------------------- */
+/* 이전글, 다음글 */
+#pre_next_div table {
+	border-collapse: collapse;
+	width: 1000px;
+	height: 100px;
+}
+
+#pre_next_div table tr {
+	border-top: 1px solid #d3d3d3;
+	border-bottom: 1px solid #d3d3d3;
+}
+
+#pre_next_div table td{
+	padding-left: 20px;
+}
+						 
+#pre_next_div table a {
+	text-decoration: none;
+	color: gray;
+	font-weight: 200;
+}
+
+.pre_td, .next_td{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width:450px;
+}
+
+/* 목록으로 버튼 */
+#back_btn {
+	background: #12B8BA;
+	border: 1px solid #109a9a;
+	color: white;
+	height: 40px;
+	width: 100px;
+	font-size: 15px;
+	margin: 50px auto;
+	cursor: pointer;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+#back_btn:hover {
+	background-color: #0f8c8c; 
+    border-color: #0b6666;
+}
+
+#list_btn_div{
+	text-align: right;
+	
+}
+
+/* 페이지 */
+#page {
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 50px;
+	
+}
+
