@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="m">
+	<!-- 기기 목록 조회 -->
+	<select id="medical_device_list" resultType="vo.DeviceVO"
+		parameterType="java.util.Map">
+		select * from
+		( select rank() over( order by dev_idx Desc
+		) no, m.*
+		from device m )
+		where no between #{start} and #{end}
+	</select>
+
+	<!-- 전체 게시글 수 -->
+	<select id="device_count" resultType="int">
+
+		select count(*) from device
+
+	</select>
+
+	<select id="selectDeviceInfo" parameterType="int"
+		resultType="vo.DeviceVO">
+		SELECT *
+		FROM device
+		WHERE dev_idx = #{dev_idx}
+	</select>
+
+	<select id="searchDevices" parameterType="java.util.Map"
+		resultType="vo.DeviceVO">
+		SELECT *
+		FROM device
+		WHERE 1=1
+		<if test="searchType != null and searchType == 'name'">
+			AND dev_name LIKE '%' || #{keyword} || '%'
+		</if>
+		<if test="searchType != null and searchType == 'content'">
+			AND dev_content LIKE '%' || #{keyword} || '%'
+		</if>
+		<if test="searchType != null and searchType == 'all'">
+			AND (dev_name LIKE '%' || #{keyword} || '%' OR dev_content LIKE '%' ||
+			#{keyword} || '%')
+		</if>
+	</select>
+</mapper>

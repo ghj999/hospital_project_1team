@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<!-- <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	<context:component-scan base-package="com.kh.dept" /> -->
+	
+	<!-- Autowired사용을 위한 속성 -->
+	<context:annotation-config/>
+	<context:component-scan base-package="service" />
+	
+	<beans:bean class="controller.LoginController">
+		<beans:property name="login_dao" ref="login_dao"/>
+		<beans:property name="banner_dao" ref="banner_dao"/>
+		<beans:property name="mss" ref="mss"/>
+		<beans:property name="mypage_dao" ref="mypage_dao"/>
+		<beans:property name="notice_dao" ref="notice_dao_bean"/>
+	</beans:bean>
+	
+	<beans:bean class="controller.InfoController">
+		<beans:property name="notice_dao" ref="notice_dao_bean"/>
+		<beans:property name="floor_dao" ref="floor_dao_bean"/>
+	</beans:bean>
+
+	<beans:bean class="controller.ReservationController">
+		<beans:property name="reservation_dao" ref="reservation_dao"/>
+		<beans:property name="professor_dao" ref="professor_dao"/>
+		<beans:property name="schedule_dao" ref="schedule_dao"/>
+		<beans:property name="calling_dao" ref="calling_dao"/>
+	</beans:bean>
+
+	<beans:bean class="controller.MypageController">
+		<beans:property name="login_dao" ref="login_dao"/>
+		<beans:property name="mypage_dao" ref="mypage_dao"/>
+	</beans:bean>
+	
+	<beans:bean class="controller.DiagnosisController">		
+		<beans:property name="diagnosisDao" ref="diagnosis_dao_bean"/>
+	</beans:bean>
+	
+	<beans:bean class="controller.DeviceController">
+		<beans:property name="deviceDao" ref="device_dao_bean"/>
+	</beans:bean>
+	
+	<beans:bean class="controller.JoinController">
+		<beans:property name="patBoard_dao" ref="patBoard_dao_bean"/>
+		<beans:property name="volunteer_dao" ref="volunteer_dao_bean"/>
+		<beans:property name="volcomment_dao" ref="volcomment_dao_bean"/>
+		<beans:property name="volreply_dao" ref="volreply_dao_bean"/>
+	</beans:bean>	
+	
+	<!-- 관리자 -->
+	<beans:bean class="controller_admin.AdminController_Notice">
+		<beans:property name="notice_dao" ref="notice_dao_bean"/>
+	</beans:bean>
+	
+	<beans:bean class="controller_admin.AdminController_Calling">
+		<beans:property name="calling_dao" ref="calling_dao"/>
+	</beans:bean>
+	
+	<beans:bean class="controller_admin.AdminController_Banner">
+		<beans:property name="banner_dao" ref="banner_dao"/>
+	</beans:bean>
+	
+	<beans:bean class="controller_admin.AdminController_Reservation">
+		<beans:property name="login_dao" ref="login_dao"/>
+		<beans:property name="professor_dao" ref="professor_dao"/>
+		<beans:property name="reservation_dao" ref="reservation_dao"/>
+	</beans:bean>
+	
+	<beans:bean class="controller.ProfessorController">
+		<beans:property name="professorDao" ref="professor_dao"/>
+	</beans:bean>
+	
+	<beans:bean class="controller_admin.AdminController_Professor">
+		<beans:property name="professorDao" ref="professor_dao"/>
+		<beans:property name="scheduleDao" ref="schedule_dao"/>
+	</beans:bean>
+	
+	<beans:bean class="controller_admin.AdminController_Volunteer">
+		<beans:property name="patBoard_dao" ref="patBoard_dao_bean"/>
+		<beans:property name="volunteer_dao" ref="volunteer_dao_bean"/>
+		<beans:property name="volcomment_dao" ref="volcomment_dao_bean"/>
+		<beans:property name="volreply_dao" ref="volreply_dao_bean"/>
+	</beans:bean>
+	
+	
+</beans:beans>
+
+
+
+
+
+
+
+

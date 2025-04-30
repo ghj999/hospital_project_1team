@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sche">
+
+	<!-- resultMap 정의 -->
+	<resultMap id="ScheduleMap" type="sche">
+		<result property="pro_idx" column="pro_idx" javaType="int" />
+		<result property="weekday" column="weekday" javaType="int" />
+	</resultMap>
+
+	<!-- resultMap 사용한 이유 : resultType으로 하니까 자꾸 캐스팅 과정에서 integer로 바뀌지 않고 BigDecimal로 
+		바뀜 -->
+	<select id="abledays" resultMap="ScheduleMap"
+		parameterType="int">
+		select s.pro_idx, s.weekday
+		from schedule s
+		join professor p
+		on p.pro_idx = s.pro_idx
+		where s.pro_idx = #{pro_idx}
+	</select>
+
+	<!-- 관리자-의료진 일정 추가 -->
+	<insert id="schedule_insert" parameterType="vo.ScheduleVO">
+		INSERT INTO schedule
+		VALUES (
+		#{pro_idx}, #{weekday}
+		)
+	</insert>
+
+	<!-- 관리자-의료진 일정 삭제 -->
+	<delete id="schedule_delete" parameterType="int">
+		DELETE FROM schedule
+		WHERE pro_idx = #{pro_idx}
+	</delete>
+	
+	
+</mapper>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="volunteer">
+
+	<!-- 자원봉사 조회 -->
+	<select id="vol_list"
+			resultType="vo.VolunteerVO"
+			parameterType="java.util.Map">
+		select * 
+		from (select rank() over(order by vol_idx DESC) no, v.*
+			  from (select * from volunteer
+		<trim prefix="where" prefixOverrides="or|and">
+		    <if test="vol_title != null and vol_content != null">
+		        (vol_title like '%' || #{vol_title} || '%' OR vol_content like '%' || #{vol_content} || '%')
+		    </if>
+		    <if test="vol_title != null and vol_content == null">
+		        vol_title like '%' || #{vol_title} || '%'
+		    </if>
+		    <if test="vol_title == null and vol_content != null">
+		        vol_content like '%' || #{vol_content} || '%'
+		    </if>
+		</trim>	  
+			 ) v)
+		where no between #{start} and #{end}
+	</select>
+	
+	<!-- 자원봉사 수 -->
+	<select id="volunteer_count"
+			resultType="int"
+			parameterType="java.util.Map">
+		select COUNT(*) from volunteer
+		
+		<trim prefix="where" prefixOverrides="or|and">
+		    <if test="vol_title != null and vol_content != null">
+		        (vol_title like '%' || #{vol_title} || '%' OR vol_content like '%' || #{vol_content} || '%')
+		    </if>
+		    <if test="vol_title != null and vol_content == null">
+		        vol_title like '%' || #{vol_title} || '%'
+		    </if>
+		    <if test="vol_title == null and vol_content != null">
+		        vol_content like '%' || #{vol_content} || '%'
+		    </if>
+		</trim>
+	</select>
+	
+	<!-- 상세보기 조회 -->
+	<select id="vol_one"
+			resultType="vo.VolunteerVO"
+			parameterType="int">
+		select * from volunteer
+		where vol_idx = #{vol_idx}		
+	</select>
+	
+	
+	<!-- 환자정보 조회 -->
+	<select id="pat_info"
+			resultType="vo.PatientVO"
+			parameterType="int">
+		select * from patient
+		where pat_idx = #{pat_idx}
+	</select>
+	
+	<!-- 이전, 다음글 조회 -->
+	<select id="select_pre"
+			resultType="vo.VolunteerVO"
+			parameterType="int">
+		<![CDATA[
+		SELECT * 
+	    FROM (
+	        SELECT volunteer.*, ROW_NUMBER() OVER (ORDER BY vol_idx DESC) AS rnum
+	        FROM volunteer
+	        WHERE vol_idx < #{vol_idx}
+	    )
+	    WHERE rnum = 1
+
+		]]>
+	</select>	
+	
+	<select id="select_next"
+			resultType="vo.VolunteerVO"
+			parameterType="int">
+		<![CDATA[
+		SELECT * 
+	    FROM (
+	        SELECT volunteer.*, ROW_NUMBER() OVER (ORDER BY vol_idx ASC) AS rnum
+	        FROM volunteer
+	        WHERE vol_idx > #{vol_idx}
+	    )
+	    WHERE rnum = 1
+		]]>
+	</select>
+	
+	<!-- 조회수 증가 -->
+	<update id="update_hits"
+			parameterType="int">
+		update volunteer set vol_hits = vol_hits + 1
+		where vol_idx = #{vol_idx}
+	</update>
+	
+	<!-- 관리자:자원봉사 추가 -->
+	<insert id="insert_volunteer" parameterType="vo.VolunteerVO">
+		INSERT INTO volunteer VALUES (
+		    vol_idx_seq.nextVal,
+		    #{vol_title},
+		    #{vol_content},
+		    sysdate,
+		    0,
+		    #{vol_file},
+		    1,
+		    0,
+		    0,
+		    #{vol_start_date},
+		    #{vol_end_date}
+		)
+	</insert>
+	
+	<delete id="delete_volunteer">
+		DELETE FROM volunteer 
+		WHERE vol_idx = #{vol_idx}
+	</delete>
+	
+	
+</mapper>
+
+
+

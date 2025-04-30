@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="banner">
+	
+	<!-- 배너 전체 조회 -->
+ 	<select id="banner_list" resultType="vo.BannerVO">
+ 		SELECT * FROM banner
+ 	</select>
+ 	
+ 	<!-- 관리자: 배너 확인여부 수정 -->
+ 	<update id="banner_update_chk" parameterType="vo.BannerVO">
+ 		UPDATE banner
+	    SET banner_chk = CASE
+	    WHEN banner_chk = 0 THEN 1
+	    ELSE 0
+	    END
+	    WHERE banner_idx = #{banner_idx}
+ 	</update>
+ 	
+ 	<!-- 관리자: 배너 추가 -->
+ 	<insert id="banner_insert" parameterType="vo.BannerVO">
+ 		INSERT INTO banner VALUES(
+ 			banner_idx_seq.nextVal, #{banner_name}, #{banner_file}, #{banner_chk}
+ 		)
+ 	</insert>
+ 	
+ 	<!-- 관리자: 배너 삭제 -->
+ 	<delete id="banner_delete" parameterType="int">
+ 		DELETE FROM banner
+	    WHERE banner_idx IN
+	    <foreach item="id" collection="list" open="(" separator="," close=")">
+	        #{id}
+	    </foreach>
+ 	</delete>
+	
+	<!-- 관리자: 배너 파일명 가져오기 -->
+	<select id="getBannerFiles" parameterType="list" resultType="string">
+	    SELECT banner_file
+	    FROM banner
+	    WHERE banner_idx IN
+	    <foreach item="id" collection="list" open="(" separator="," close=")">
+	        #{id}
+	    </foreach>
+	</select>
+	
+	
+</mapper>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice">
+
+	<!-- 공지사항 전체 조회 (메인 화면)-->
+	<select id="select_notice_list_main"
+			resultType="vo.NoticeVO">
+		select * from notice
+	</select>
+
+	<!-- 공지사항 전체 조회 -->
+	<select id="select_notice_list"
+			resultType="vo.NoticeVO"
+			parameterType="java.util.Map">
+		select * 
+		from (select rank() over(order by not_idx DESC) no, n.*
+			  from (select * from notice
+		<trim prefix="where" prefixOverrides="or|and">
+		    <if test="not_title != null and not_content != null">
+		        (not_title like '%' || #{not_title} || '%' OR not_content like '%' || #{not_content} || '%')
+		    </if>
+		    <if test="not_title != null and not_content == null">
+		        not_title like '%' || #{not_title} || '%'
+		    </if>
+		    <if test="not_title == null and not_content != null">
+		        not_content like '%' || #{not_content} || '%'
+		    </if>
+		</trim>    
+			 ) n )
+		where no between #{start} and #{end} 
+		
+	</select>
+	
+	<!-- 공지사항 수 -->
+	<select id="notice_count"
+			resultType="int"
+			parameterType="java.util.Map">
+		select COUNT(*) from notice
+		
+		<trim prefix="where" prefixOverrides="or|and">
+		    <if test="not_title != null and not_content != null">
+		        (not_title like '%' || #{not_title} || '%' OR not_content like '%' || #{not_content} || '%')
+		    </if>
+		    <if test="not_title != null and not_content == null">
+		        not_title like '%' || #{not_title} || '%'
+		    </if>
+		    <if test="not_title == null and not_content != null">
+		        not_content like '%' || #{not_content} || '%'
+		    </if>
+		</trim> 
+		
+	</select>
+	
+	<!-- 공지사항 상세 조회 -->
+	<select id="select_notice_one"
+		    resultType="vo.NoticeVO"
+		    parameterType="int">
+		select * from notice
+		where not_idx = #{not_idx}
+	</select>
+	
+	<!-- 이전, 다음글 조회 -->
+	<select id="select_pre"
+			resultType="vo.NoticeVO"
+			parameterType="int">
+		 <![CDATA[
+		SELECT * 
+	    FROM (
+	        SELECT notice.*, ROW_NUMBER() OVER (ORDER BY not_idx DESC) AS rnum
+	        FROM notice
+	        WHERE not_idx < #{not_idx}
+	    )
+	    WHERE rnum = 1
+
+		]]>
+	</select>	
+	
+	<select id="select_next"
+			resultType="vo.NoticeVO"
+			parameterType="int">
+		<![CDATA[
+		SELECT * 
+	    FROM (
+	        SELECT notice.*, ROW_NUMBER() OVER (ORDER BY not_idx ASC) AS rnum
+	        FROM notice
+	        WHERE not_idx > #{not_idx}
+	    )
+	    WHERE rnum = 1
+		]]>
+	</select>
+	
+	<!-- 조회수 증가 -->
+	<update id="update_hits"
+			parameterType="int">
+		update notice set not_hits = not_hits + 1
+		where not_idx = #{not_idx}
+	</update>
+	
+	<!-- 관리자:공지사항 수정-->
+	<update id="update_notice" parameterType="vo.NoticeVO">
+		UPDATE notice SET 
+		not_title = #{not_title},
+		not_content = #{not_content},
+		not_date = sysdate,
+		not_file = #{not_file}
+		WHERE not_idx = #{not_idx}
+	</update>
+	
+	<!-- 관리자:공지사항 추가 -->
+	<insert id="insert_notice" parameterType="vo.NoticeVO">
+		INSERT INTO notice VALUES (
+			not_idx_seq.nextVal, #{not_title}, #{not_content}, sysdate, 0, #{not_file}
+		)
+	</insert>
+	
+	<!-- 관리자:공지사항 삭제 -->
+	<delete id="delete_notice" parameterType="int">
+	    DELETE FROM notice
+	    WHERE not_idx = #{not_idx}
+	</delete>
+
+	
+</mapper>
+
+
+
+
+
+
+

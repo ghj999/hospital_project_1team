@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="calling">
+
+	<!-- 상담 예약 추가 -->
+	<insert id="insert_calling" parameterType="vo.CallingVO">
+		INSERT INTO calling VALUES(
+			calling_idx_seq.nextVal, #{calling_name}, #{calling_tel}, 0
+		)
+	</insert>
+	
+	<!-- 관리자: 상담예약 리스트 -->
+	<select id="calling_list" resultType="vo.CallingVO" parameterType="java.util.Map">
+		select * 
+		from (select rank() over(order by calling_idx DESC) no, c.*
+			  from (select * from calling
+		<trim prefix="where" prefixOverrides="or|and">
+		    <if test="calling_name != null and calling_tel == null">
+		        calling_name like '%' || #{calling_name} || '%'
+		    </if>
+		    <if test="calling_name == null and calling_tel != null">
+		        calling_tel like '%' || #{calling_tel} || '%'
+		    </if>
+		</trim>    
+			 ) c )
+		where no between #{start} and #{end} 
+	</select>
+	
+	<!-- 관리자: 상담예약 갯수 -->
+	<select id="calling_count" resultType="int" parameterType="java.util.Map">
+		select COUNT(*) from calling
+		<trim prefix="where" prefixOverrides="or|and">
+		    <if test="calling_name != null and calling_tel == null">
+		        calling_name like '%' || #{calling_name} || '%'
+		    </if>
+		    <if test="calling_name == null and calling_tel != null">
+		        calling_tel like '%' || #{calling_tel} || '%'
+		    </if>
+		</trim> 
+	</select>
+	
+	<!-- 관리자: 체크된 예약들 삭제 -->
+	<delete id="delete_calling_check">
+		DELETE FROM calling
+	    WHERE calling_idx IN
+	    <foreach item="id" collection="list" open="(" separator="," close=")">
+	        #{id}
+	    </foreach>
+	</delete>
+	
+	<!-- 관리자: 예약여부 수정하기 -->
+	<select id="update_calling_chk">
+		UPDATE calling SET calling_chk = 1
+		WHERE calling_idx = #{calling_idx}
+	</select>
+	
+	
+
+</mapper>

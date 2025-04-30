@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mypage">
+
+<!-- 기본정보변경 -->	
+<update id="update_patient_info" parameterType="vo.PatientVO">
+	update patient set
+		pat_email = #{ pat_email },
+		pat_address_post = #{ pat_address_post },
+		pat_address_road = #{ pat_address_road },
+		pat_address_detail = #{ pat_address_detail },
+		pat_phone = #{ pat_phone },
+		pat_phone2 = #{ pat_phone2 },
+		pat_birthday = #{ pat_birthday },
+		pat_gender = #{ pat_gender }
+	where pat_idx=#{ pat_idx }
+</update>
+
+<!-- 비밀번호변경 -->
+<update id="update_patient_pwd" parameterType="java.util.Map">
+	update patient set pat_pwd = #{ pwd_new } where pat_idx = #{ pat_idx }
+</update>
+
+<!-- 회원탈퇴 -->
+<delete id="withdrawal_patient" parameterType="int">
+	delete from patient 
+	where pat_idx = #{ pat_idx }
+</delete>
+
+<!-- 예약내역조회 -->
+<select id="select_reservation_list" parameterType="int" resultType="vo.MypageResListVO">
+	SELECT 
+	    dept.dept_name AS dept_name,
+	    pro.pro_name AS pro_name,
+	    pro.pro_file AS pro_file,
+	    TO_CHAR(res.res_time, 'YYYY-MM-DD HH24:MI') AS res_time,
+	    res.pay_chk AS pay_chk,
+	    dept.dept_loc AS dept_loc,
+	    res.res_idx AS res_idx,
+	    pro.pro_idx AS pro_idx
+	FROM 
+	    reservation res
+	JOIN 
+	    professor pro ON res.pro_idx = pro.pro_idx
+	JOIN 
+	    department dept ON pro.dept_idx = dept.dept_idx
+	JOIN 
+	    patient pat ON res.pat_idx = pat.pat_idx
+	WHERE 
+	    pat.pat_idx = #{pat_idx}
+</select>
+
+<!-- 작성글조회 -->
+<select id="select_patboard_list" parameterType="int" resultType="vo.PatBoardVO">
+	select * from patboard
+	where pat_idx = #{ pat_idx }
+</select>
+
+<!-- 작성글내용조회 -->
+<select id="select_patboard_detail" parameterType="int" resultType="vo.PatBoardVO">
+	select * from patboard
+	where board_idx = #{ board_idx }
+</select>
+
+<!-- 작성글삭제 -->
+<delete id="delete_pat_board" parameterType="int">
+	delete from patboard
+	where board_idx = #{ board_idx }
+</delete>
+
+<!-- 작성글수정 -->
+<update id="update_pat_board" parameterType="vo.PatBoardVO">
+	update patboard set
+		board_title = #{ board_title },
+		board_content = #{ board_content },
+		board_file = #{ board_file },
+		board_phone = #{ board_phone },
+		board_name = #{ board_name }
+	where board_idx = #{ board_idx }
+</update>
+
+<!-- 진료비내역조회 -->
+<select id="select_payment_list" parameterType="int" resultType="vo.MypagePayVO">
+	SELECT 
+		pat.pat_idx AS pat_idx, 			--환자번호
+		pat.pat_name AS pat_name,			--환자이름
+		pat.pat_email AS pat_email,			--환자이메일
+		pat.pat_phone AS pat_phone,			--환자전화번호
+	    dept.dept_name AS dept_name,		--진료과
+	    dept.dept_payment AS dept_payment,	--진료비
+	    pro.pro_name AS pro_name,			--교수이름
+	    pro.pro_file AS pro_file,			--교수사진
+	    res.res_idx AS res_idx,				--예약번호
+	    TO_CHAR(res.res_time, 'YYYY-MM-DD HH24:MI') AS res_time		--예약날짜,시간
+	FROM 
+	    reservation res
+	JOIN 
+	    professor pro ON res.pro_idx = pro.pro_idx
+	JOIN 
+	    department dept ON pro.dept_idx = dept.dept_idx
+	JOIN 
+	    patient pat ON res.pat_idx = pat.pat_idx
+	WHERE
+		pat.pat_idx = #{ pat_idx }
+	AND
+		res.pay_chk = 0 <!-- 진료비 결제가 안된 것들만 조회 -->
+</select>
+
+<!-- 진료비내역 수정 -->
+<update id="update_payment_list" parameterType="int">
+	update reservation set
+	pay_chk = 1
+	where res_idx = #{ res_idx }		
+</update>
+
+</mapper>

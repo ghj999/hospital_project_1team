@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="login_dao" class="dao.LoginDAO">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean>
+	
+	<bean id="reservation_dao" class="dao.ReservationDAO">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean>
+	
+	<bean id="professor_dao" class="dao.ProfessorDAO">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean>
+	
+	<bean id="schedule_dao" class="dao.ScheduleDAO">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean>
+	
+	<bean id="banner_dao" class="dao.BannerDAO">
+		<property name="sqlSesson" ref="sqlSessionBean"/>
+	</bean>
+	
+	<bean id="diagnosis_dao_bean" class="dao.DiagnosisDAO">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean>	
+	
+	<bean id="device_dao_bean" class="dao.DeviceDAO">
+		<property name="sqlSession" ref="sqlSessionBean"/>	
+	</bean>
+	
+	<bean id="mypage_dao" class="dao.MypageDAO">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean>
+	
+	<!-- 고객참여 - 감사, 건의합니다 -->
+	<bean id="patBoard_dao_bean" class="dao.PatBoardDAO">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean>
+	
+	<!-- 자원봉사 -->
+	<bean id="volunteer_dao_bean" class="dao.VolunteerDAO">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean> 
+	
+	<!-- 자원봉사 댓글 -->
+	<bean id="volcomment_dao_bean" class="dao.VolcommentDAO">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean> 
+	
+	<!-- 자원봉사 답글 -->
+	<bean id="volreply_dao_bean" class="dao.VolreplyDAO">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean> 
+	
+	<!-- 공지사항 -->
+	<bean id="notice_dao_bean" class="dao.NoticeDAO">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean>
+	
+	<!-- 상담예약 -->
+	<bean id="calling_dao" class="dao.CallingDAO">
+		<property name="sqlsesson" ref="sqlSessionBean"/>
+	</bean>
+	
+	<bean id="floor_dao_bean" class="dao.FloorDAO">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean>
+	
+</beans>

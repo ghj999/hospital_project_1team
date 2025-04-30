@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="j">
+
+	<!-- 회원정보 추가 -->
+	<insert id="join_insert" parameterType="join">
+		INSERT INTO join VALUES(
+		seq_join_idx.nextVal, --글의 idx
+		#{user_id}, --아이디
+		#{user_pwd}, --비밀번호
+		#{confirm_password}, --비밀번호 재확인
+		#{name}, --이름
+		#{birth_date}, --.생년월일
+		#{gender}, --성별
+		#{user_email}, --본인 확인 이메일
+		#{cell_phone}
+		)
+	</insert>	
+	
+</mapper>

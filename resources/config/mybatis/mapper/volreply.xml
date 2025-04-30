@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="volreply">
+	
+	<!-- 답글 조회 -->
+	<select id="reply_list" resultType="vo.VolreplyVO">
+		SELECT * FROM volreply  
+	</select>
+	
+	<!-- 답글 추가 -->
+	<insert id="insert_reply"
+			parameterType="vo.VolreplyVO">
+		insert into volreply values(
+						reply_idx_seq.nextVal,
+						#{vol_idx},
+						#{comm_idx},
+						#{reply_content},
+						sysdate,
+						#{pat_idx},
+						#{reply_name}
+		) 
+	</insert>
+
+	<!-- 댓글 하나의 답글들 모두 삭제 -->
+	<delete id="delete_reply_all" parameterType="int">
+		DELETE FROM volreply
+		WHERE comm_idx = #{comm_idx}
+	</delete>
+	
+	<!-- 답글 하나 삭제 -->
+	<delete id="delete_reply" parameterType="int">
+		DELETE FROM volreply
+		WHERE reply_idx = #{reply_idx}
+	</delete>
+	
+	
+</mapper>
+
+
+

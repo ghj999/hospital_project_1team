@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reservation">
+
+	<!-- 예약된 시간 가져오기 -->
+	<select id="getReservedTimes" parameterType="map"
+		resultType="string">
+		SELECT TO_CHAR(res_time, 'HH24:MI') AS reserved_time
+		FROM reservation
+		WHERE TO_CHAR(res_time, 'YYYY-MM-DD') = #{date}
+		AND pro_idx = #{pro_idx}
+	</select>
+
+	<!-- 예약 정보 저장 -->
+	<insert id="insertReservation">
+		INSERT INTO reservation (res_idx, pat_idx, pro_idx, res_time, res_chk,
+		pay_chk, contact)
+		VALUES (res_idx_seq.NEXTVAL, #{pat_idx}, #{pro_idx}, TO_DATE(#{res_time},
+		'YYYY-MM-DD HH24:MI'), 1, 0, #{contact})
+	</insert>
+
+	<!-- 예약취소 -->
+	<delete id="cancel_res" parameterType="int">
+		delete from reservation where res_idx=#{res_idx}
+	</delete>
+
+	<!-- 예약수정 -->
+	<update id="updateReservation" parameterType="map">
+		UPDATE reservation
+		SET pat_idx = #{pat_idx},
+		pro_idx = #{pro_idx},
+		res_time = TO_TIMESTAMP(#{res_time}, 'YYYY-MM-DD HH24:MI')
+		WHERE res_idx = #{res_idx}
+	</update>
+
+	<!-- 관리자-모든예약 조회 -->
+	<select id="reservation_list"
+		resultType="vo.ManageReservationVO" parameterType="java.util.Map">
+		SELECT *
+		FROM (
+		SELECT RANK() OVER (ORDER BY res.res_idx DESC) AS rank_idx,
+		res.*,
+		pat.pat_name,
+		pro.pro_name,
+		dept.dept_name
+		FROM reservation res
+		LEFT JOIN patient pat ON res.pat_idx = pat.pat_idx
+		LEFT JOIN professor pro ON res.pro_idx = pro.pro_idx
+		LEFT JOIN department dept ON pro.dept_idx = dept.dept_idx
+		<trim prefix="WHERE" prefixOverrides="OR|AND">
+			<!-- 검색 조건 추가 -->
+			<if test="pat_name != null and pro_name != null">
+				(pat.pat_name LIKE '%' || #{pat_name} || '%' OR pro.pro_name LIKE '%' || #{pro_name} || '%')
+			</if>
+			<if test="pat_name != null and pro_name == null">
+				pat.pat_name LIKE '%' || #{pat_name} || '%'
+			</if>
+			<if test="pat_name == null and pro_name != null">
+				pro.pro_name LIKE '%' || #{pro_name} || '%'
+			</if>
+		</trim>
+		) subquery
+		WHERE rank_idx BETWEEN #{start} AND #{end}
+	</select>
+
+	<!-- 관리자-전체예약 갯수 조회 -->
+	<select id="reservation_count" resultType="int" parameterType="java.util.Map">
+		SELECT count(*) FROM reservation
+		<trim prefix="WHERE" prefixOverrides="OR|AND">
+			<!-- 검색 조건 추가 -->
+			<if test="pat_name != null and pro_name != null">
+				(pat.pat_name LIKE '%' || #{pat_name} || '%' OR pro.pro_name LIKE '%' || #{pro_name} || '%')
+			</if>
+			<if test="pat_name != null and pro_name == null">
+				pat.pat_name LIKE '%' || #{pat_name} || '%'
+			</if>
+			<if test="pat_name == null and pro_name != null">
+				pro.pro_name LIKE '%' || #{pro_name} || '%'
+			</if>
+		</trim>
+	</select>
+
+	<!-- 관리자-예약삭제 -->
+	<delete id="reservation_manage_delete">
+		DELETE FROM reservation
+	    WHERE res_idx IN
+	    <foreach item="id" collection="list" open="(" separator="," close=")">
+	        #{id}
+	    </foreach>
+	</delete>
+
+
+
+</mapper>

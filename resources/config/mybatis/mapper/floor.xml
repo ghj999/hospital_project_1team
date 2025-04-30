@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="floor">
+
+	<select id="select_floor"
+			resultType="vo.FloorVO">
+		SELECT DISTINCT floor_info, floor_name
+		FROM floor
+		ORDER BY floor_info DESC
+	</select>
+	
+	<select id="search_floor" 
+			resultType="vo.FloorVO"
+			parameterType="String">
+		SELECT floor_name, floor_info
+	    FROM floor
+	    WHERE floor_name LIKE '%' || #{search_text} || '%'
+	    ORDER BY floor_info ASC
+	</select>
+
+</mapper>
